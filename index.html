@@ -10,11 +10,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<link href="jquery.css" rel="stylesheet" type="text/css" />
-
+	<link rel ='stylesheet' type = "text/css" href = "highlight.css" title='normal'>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jmpress.js"></script>
 
-<link href='http://fonts.googleapis.com/css?family=Alef|Telex' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Montserrat|Lato' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
@@ -44,8 +44,7 @@
 	  <h2>Software libre, por supuesto</h2>
 
 <ul><li>Usa una
-    <a href='http://en.wikipedia.org/wiki/MIT_License'>licencia
-      MIT</a></li>
+    <a href='http://en.wikipedia.org/wiki/MIT_License'>licencia MIT</a></li>
 
   <li>Descargable desde <a href='http://jquery.org'>jQuery.org</a>.</li>
 
@@ -67,6 +66,28 @@
 	    <li><a href='http://plugins.jquery.com/'>Y plugins para jQuery</a></li>
 	    <li>Aparte de <a href='https://github.com/shama/jmpress.js'>jmpress.js</a>, con el que estoy haciendo esta presentación.</li>
 	</div>
+
+	<div class="step" data-x="4000">
+	  <h2>El dólar se paró aquí</h2>
+
+	  <p><a href='ejemplos/ready.html'><code>ready.html</code></a></p>
+<code class='ejemplo'><span class="hl kwa">&lt;html&gt;</span>
+<span class="hl kwa">&lt;head&gt;</span>
+<span class="hl kwa">&lt;meta</span> <span class="hl kwb">http-equiv</span>=<span class="hl str">&quot;Content-Type&quot;</span> <span class="hl kwb">content</span>=<span class="hl str">&quot;text/html; charset=iso-8859-15&quot;</span><span class="hl kwa">&gt;</span>
+<span class="hl kwa">&lt;script</span> <span class="hl kwb">src</span>=<span class="hl str">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js&quot;</span><span class="hl kwa">&gt;&lt;/script&gt;</span>
+<span class="hl kwa">&lt;title&gt;</span>Probando ready de jQuery<span class="hl kwa">&lt;/title&gt;</span>
+<span class="hl kwa">&lt;/head&gt;</span>
+
+<span class="hl kwa">&lt;body&gt;</span>
+<span class="hl kwa">&lt;h1&gt;</span>Esta es una página que no tiene gran cosa<span class="hl kwa">&lt;/h1&gt;</span>
+
+<span class="hl kwa">&lt;p&gt;</span>Pero podría tenerla.<span class="hl kwa">&lt;/p&gt;</span>
+<span class="hl kwa">&lt;script</span> type='text/javascript'<span class="hl kwa">&gt;</span>
+$(document).ready(function() {
+    alert('Ahora estamos listos');
+});
+<span class="hl kwa">&lt;/script&gt;</span></code>
+
 </div>
 
 <div class="hint">

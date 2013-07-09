@@ -134,13 +134,13 @@ body {
 
 h1 { 
      font-size: 4em;
-     font-family: "Alef", sans-serif;
+     font-family: "Montserrat", sans-serif;
      color: black;
 }
 
 h2{ 
      font-size: 2.5em;
-     font-family: "Alef", sans-serif;
+     font-family: "Montserrat", sans-serif;
      color: #47423F;
      background-color:rgba(250,240,230,0.7);
      padding: 10px;
@@ -148,7 +148,7 @@ h2{
 
 h3 { 
      font-size: 1.5em;
-     font-family: "Alef", sans-serif;
+     font-family: "Montserrat", sans-serif;
      color: DarkGray;
      padding: 5px;
 }
@@ -161,7 +161,23 @@ ul {
 
 li { 
      font-size: 2em;
-     font-family: "Telex", sans-serif;
+     font-family: "Lato", sans-serif;
      color:#1F1209;
      padding: 10px;
+}
+
+code.ejemplo {
+  font-size:medium;
+  white-space:pre;	
+  display: block;
+  padding: 2pt;
+  background-color: lightYellow;
+  color: darkBlue;
+  border-style: double;
+  border-color: #000080;
+  border-width: 2pt;
+  font-family: Courier New, Courier;
+  text-indent: 0%;
+  margin-right: 5%;
+  margin-left: 5%;
 }
