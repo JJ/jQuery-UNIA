@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>jQuery y jQuery Mobile - Tutorial</title>
+
+	<meta name="description" content="jmpress.js is a jQuery plugin to build a website on the infinite canvas">
+	<meta name="author" content="Kyle Robinson Young @shama & Tobias Koppers @sokra Modified by @jjmerelo JJ Merelo" />
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<link href="jquery.css" rel="stylesheet" type="text/css" />
+	<link rel ='stylesheet' type = "text/css" href = "highlight.css" title='normal'>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jmpress.js"></script>
+
+<link href='http://fonts.googleapis.com/css?family=Montserrat|Lato' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<div id="simple">
+	<div id="home" class="step">
+	  <h1>Tutorial de jQuery y jQuery Mobile</h1>
+	  <h2>Por <a href='http://twitter.com/jjmerelo'>JJ Merelo</a></h2>
+	  <h3>Curso <strong>Desarrollo de aplicaciones multiplataforma para dispositivos móviles</strong>, UNIA, La Rábida, Huelva, julio 2013</h3>
+
+	</div>
+
+
+	<div class="step" data-x="1000">
+	  <h2>Qué es jQuery</h2>
+
+<ul>
+  <li>Librería de JavaScript</li>
+  <li>Simplifica la creación de programas e interfaces ricos de usuario.</li>
+  <li>Creado en el año 2006.</li>
+  <li>Usado en <a href='http://royal.pingdom.com/2012/06/20/jquery-numbers/'>la mitad de los sitios más populares</a>.</li>
+</ul>
+
+	</div>
+
+	<div class="step" data-x="2000">
+	  <h2>Software libre, por supuesto</h2>
+
+<ul><li>Usa una
+    <a href='http://en.wikipedia.org/wiki/MIT_License'>licencia MIT</a></li>
+
+  <li>Descargable desde <a href='http://jquery.org'>jQuery.org</a>.</li>
+
+  <li>Y usable desde ahí o desde <a href='https://developers.google.com/speed/libraries/devguide#jquery'><em>Google hosted libraries</em></a></li>
+
+  <li>O, por supuesto, desde tu propia copia en tu propio sitio web (porque es libre).</li>
+
+</ul>
+
+	</div>
+
+
+	<div class="step" data-x="3000">
+	  <h2>Base de un ecosistema de módulos</h2>
+
+	  <ul>
+	    <li><a href='http://jqueryui.com/'>jQuery UI</a>, para creación de interfaces de usuario.</li>
+	    <li><a href='http://jquerymobile.com/'>jQuery mobile, para móviles y basada en HTML5</a></li>
+	    <li><a href='http://plugins.jquery.com/'>Y plugins para jQuery</a></li>
+	    <li>Aparte de <a href='https://github.com/shama/jmpress.js'>jmpress.js</a>, con el que estoy haciendo esta presentación.</li>
+	</div>
+
+	<div class="step" data-x="4000">
+	  <h2>El dólar se paró aquí</h2>
+
+	  <p><a href='ejemplos/ready.html'><code>ready.html</code></a></p>
+<code class='ejemplo'><span class="hl kwa">&lt;html&gt;</span>
+<span class="hl kwa">&lt;head&gt;</span>
+<span class="hl kwa">&lt;meta</span> <span class="hl kwb">http-equiv</span>=<span class="hl str">&quot;Content-Type&quot;</span> <span class="hl kwb">content</span>=<span class="hl str">&quot;text/html; charset=iso-8859-15&quot;</span><span class="hl kwa">&gt;</span>
+<span class="hl kwa">&lt;script</span> <span class="hl kwb">src</span>=<span class="hl str">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js&quot;</span><span class="hl kwa">&gt;&lt;/script&gt;</span>
+<span class="hl kwa">&lt;title&gt;</span>Probando ready de jQuery<span class="hl kwa">&lt;/title&gt;</span>
+<span class="hl kwa">&lt;/head&gt;</span>
+
+<span class="hl kwa">&lt;body&gt;</span>
+<span class="hl kwa">&lt;h1&gt;</span>Esta es una página que no tiene gran cosa<span class="hl kwa">&lt;/h1&gt;</span>
+
+<span class="hl kwa">&lt;p&gt;</span>Pero podría tenerla.<span class="hl kwa">&lt;/p&gt;</span>
+<span class="hl kwa">&lt;script</span> type='text/javascript'<span class="hl kwa">&gt;</span>
+$(document).ready(function() {
+    alert('Ahora estamos listos');
+});
+<span class="hl kwa">&lt;/script&gt;</span></code>
+
+</div>
+
+<div class='step' data-x='5000'>
+  <h2>Claves del programa anterior</h2>
+  <ul><li>Inclusión del jQuery <em>alojado</em> por Google.</li>
+    <li><a href='http://stackoverflow.com/questions/1150381/what-is-the-meaning-of-sign-in-javascript'><code>$</code> es un identificador válido de JavaScript</a>.
+      <ul><li>Y una abreviatura de <code>jQuery</code></li></ul></li>
+    <li><code>$(document) == jquery(document)</code> <a href='http://stackoverflow.com/questions/1122690/jquery-and-questions/1122740#1122740'>llama a una función</a> sobre el objeto <code>document</code>.</li>
+    <li>... que devuelve otro objeto sobre el que creamos un evento cuando el documento está <code>ready</code></li>
+
+  </ul>
+</div>
+
+<div class="hint">
+    <p>Usa las flechas para navegar</p>
+</div>
+
+<script type="text/javascript">
+$(function() {
+	$('#simple').jmpress();
+});
+</script>
+
+</body>
+</html>
