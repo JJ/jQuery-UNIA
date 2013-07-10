@@ -242,6 +242,7 @@ $(function() {
     <script type="text/javascript" src="ejemplos/a_rojo_3.js"></script>
 </div>
 
+
 <div class='step' data-x='6000' data-z='-1000'>
   <h2>Un CSS un poco especial: notación JS</h2>
 
@@ -251,12 +252,32 @@ $(function() {
   </ul>
 </div>
 
-<div class='step' data-x='5000' data-z='-1000' >
+<div class='step' data-x='5000' data-z='-1000'>
+  <h2>Podemos usar también notación CSS (entre comillas)</h2>
+
+     <div id='a_rojo_4' class='ejemplos'>
+      <form>
+	<input type="submit" value="Venga"/>
+      </form>
+      <p>Otras palabrejas cualesquiera</p>
+    </div>
+    <pre class='js'>$("#a_rojo_4 form").submit(function(){
+    $("#a_rojo_4").css( { "font-weight": "bold",
+			  "font-size" : "2em" } );
+    return false;
+});</pre>
+    <script type="text/javascript" src="ejemplos/a_rojo_4.js"></script>
+</div>
+
+<div class='step' data-x='4000' data-z='-1000' >
   <h2>Ejercita lo aprendido (Bloque 2)</h2>
 
   <div class='ejercicios'><p>Añadir negritas a todos los elementos en cursiva que estén dentro de un párrafo (<em>no</em> de un elemento <code>h1</code>, por ejemplo) </p></div>
 
 </div>
+
+<div class='step' data-x='5000' data-z='-2000' >
+  <h2>Ejercita lo aprendido (Bloque 2)</h2>
 
 <div class="hint">
     <p>Usa las flechas para navegar</p>
