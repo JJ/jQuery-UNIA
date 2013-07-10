@@ -187,11 +187,18 @@ div.ejercicios {
   padding: 10pt;
   font-family:  Telex, Times, serif, Times New Roman;
   background-color: seashell;
-  color: black;
+  color: #6B824A;
   border-style: solid;
   border-color: darkblue;
   border-width: 1pt;
   text-indent: 0%;
   margin-right: 20%;
   margin-left: 8%;
+}
+
+div.ejemplos {
+    margin: 10px;
+    padding: 10px;
+    border-width: 2pt;
+    border-style: dashed;
 }

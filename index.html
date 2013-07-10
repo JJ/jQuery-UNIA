@@ -9,14 +9,17 @@
 	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<link href="jquery.css" rel="stylesheet" type="text/css" />
-	<link rel ='stylesheet' type = "text/css" href = "highlight.css" title='normal'>
+	<link href="css/jquery.css" rel="stylesheet" type="text/css" />
+	<link rel ='stylesheet' type = "text/css" href = "css/highlight.css" title='normal'>
 	<!-- script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script-->
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jmpress.js"></script>
+	<script type="text/javascript" src="js/jquery.snippet.js"></script> <!-- hightlight -->
 
 	<link href='http://fonts.googleapis.com/css?family=Montserrat|Lato|Telex' rel='stylesheet' type='text/css'>
 
+	<link rel="stylesheet" type="text/css" href="css/jquery.snippet.css" />
+	
 </head>
 <body>
 
@@ -47,18 +50,21 @@
 	<div class="step" data-x="2000">
 	  <h2>Software libre, por supuesto</h2>
 
-<ul><li>Usa una
-    <a href='http://en.wikipedia.org/wiki/MIT_License'>licencia MIT</a></li>
+	  <ul><li>Usa una
+	      <a href='http://en.wikipedia.org/wiki/MIT_License'>licencia MIT</a></li>
+	    
+	    <li>La licencia MIT es <em>permisiva</em> y permite incluirlo dentro de software privativo</li>
+	    <li>Eso no significa que <em>debas</em> hacerlo.</li>
+	  </ul>
+	</div>
 
-  <li>La licencia MIT es <em>permisiva</em> y permite incluirlo dentro de software privativo</li>
-</ul>
-
-<div class="step" data-x="2500">
+<div class="step" data-x="3000">
 	  <h2>Donde conseguirlo</h2>
 
   <li>Descargable desde <a href='http://jquery.org'>jQuery.org</a>.</li>
 
   <li>Y usable desde ahí o desde <a href='https://developers.google.com/speed/libraries/devguide#jquery'><em>Google hosted libraries</em></a> o cualquier otra <a href='http://jquery.com/download/'><em>Content Delivery Network (CDN)</em></a>.</li>
+	  <li><a href='http://ejohn.org/apps/workshop/intro/#41'>Uso <em>minificado</em></a>: descarga rápida.</li>
 
   <li>O, por supuesto, desde tu propia copia en tu propio sitio web (porque es libre).</li>
 
@@ -68,7 +74,7 @@
 	</div>
 
 
-	<div class="step" data-x="3000">
+	<div class="step" data-x="4000">
 	  <h2>Base de un ecosistema de módulos</h2>
 
 	  <ul>
@@ -78,7 +84,7 @@
 	    <li>Aparte de <a href='https://github.com/shama/jmpress.js'>jmpress.js</a>, con el que estoy haciendo esta presentación.</li>
 	</div>
 
-	<div class="step" data-x="4000">
+	<div class="step" data-x="5000">
 	  <h2>El dólar se paró aquí</h2>
 
 	  <p><a href='ejemplos/ready.html'><code>ready.html</code></a></p>
@@ -101,7 +107,7 @@ $(document).ready(function() {
 
 </div>
 
-<div class='step' data-x='5000'>
+<div class='step' data-x='6000'>
   <h2>Claves del programa anterior</h2>
   <ul><li>Inclusión del jQuery <em>alojado</em> por Google.</li>
     <li><a href='http://stackoverflow.com/questions/1150381/what-is-the-meaning-of-sign-in-javascript'><code>$</code> es un identificador válido de JavaScript</a>      y una abreviatura de <code>jQuery</code></li>
@@ -110,7 +116,7 @@ $(document).ready(function() {
   </ul>
 </div>
 
-<div class='step' data-x='6000'>
+<div class='step' data-x='7000'>
   <h2>Creando una agenda</h2>
 
   <h3>jQuery crea <em>eventos</em>: cuando suceda esto
@@ -118,7 +124,7 @@ $(document).ready(function() {
     estilo <em>asíncrono</em></h3>
 </div>
 
-<div class='step' data-x='7000'>
+<div class='step' data-x='8000'>
   <h2>Simplificando aún más</h2>
   <p><a href='ejemplos/ready-simple.html'><file>ready-simple.html</file></a></p>
 <code class='ejemplo'><span class="hl kwa">&lt;!DOCTYPE</span> HTML PUBLIC <span class="hl str">&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</span> <span class="hl str">&quot;http://www.w3.org/TR/html4/loose.dtd&quot;</span><span class="hl kwa">&gt;</span>
@@ -144,7 +150,7 @@ $(function() {
 <span class="hl kwa">&lt;/html&gt;</span></code>
 </div>
 
-<div class='step' data-x='8000'>
+<div class='step' data-x='9000'>
   <h2>Tan simple, tan simple...</h2>
 
   <ul><li>jQuery usa extensivamente las <em>funciones anónimas</em>
@@ -158,7 +164,7 @@ $(function() {
 
 </div>
 
-<div class='step' data-x='9000'>
+<div class='step' data-x='10000'>
   <h2>Ejercita lo aprendido (Bloque 1)</h2>
 
 <div class='ejercicios'><p>Crear una página que al cargarse realice
@@ -169,14 +175,37 @@ $(function() {
 
 </div>
 
-<div class='step' data-x='9000' data-z='1000'>
+<div class='step' data-x='10000' data-z='-1000'>
   <h2>Seleccionando partes del documento</h2>
 
   <ul><li>Se usan selectores CSS3 entre
       comillas: <code>$("h2")</code>, por ejemplo. </li>
     <li>Un selector devuelve un <em>set jQuery</em>. un objeto sobre
-      el cual se puede aplicar otra función: <code>$("h2").each( function()
-      { alert(this.text);}
+      el cual se puede aplicar otra función: </li>
+  </ul>
+  <pre class='js'>$("h2").each( function() { 
+    alert(this.text);
+}</pre>
+
+
+</div>
+
+<div class='step' data-x='9000' data-z='-1000'>
+  <h2>Ejemplo: Cambiar color a rojo</h2>
+  
+  <div id='a_rojo' class='ejemplos'>
+    <form>
+      <input type="submit" value="Venga"/>
+    </form>
+    <p>Unas palabrejas cualesquiera</p>
+  </div>
+  <pre class='js'>$("#a_rojo form").submit(function(){
+    $("#a_rojo").css( { color: "red" } );
+    return false;
+}); </pre>
+  <script type="text/javascript" src="js/a_rojo.js"></script>
+  
+</div>
 
 <div class="hint">
     <p>Usa las flechas para navegar</p>
@@ -185,6 +214,9 @@ $(function() {
 <script type="text/javascript">
 $(function() {
 	$('#simple').jmpress();
+        $("pre.js").snippet("javascript",{style:"peachpuff",
+                                          transparent:false,
+                                          showNum:true});
 });
 </script>
 
