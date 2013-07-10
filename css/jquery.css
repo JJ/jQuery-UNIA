@@ -9,9 +9,9 @@ body {
 /** STEP STYLES **/
 .step {
 	width: 900px;
-	height: 500px;
+	height: 600px;
 	font-size: 1em;
-	min-height: 600px;
+	min-height: 700px;
 	background-color: white;
 
 	display: block;

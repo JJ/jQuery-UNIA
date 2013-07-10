@@ -200,11 +200,62 @@ $(function() {
     <p>Unas palabrejas cualesquiera</p>
   </div>
   <pre class='js'>$("#a_rojo form").submit(function(){
-    $("#a_rojo").css( { color: "red" } );
+    $("#a_rojo").css( "color", "red" );
     return false;
 }); </pre>
-  <script type="text/javascript" src="js/a_rojo.js"></script>
+  <script type="text/javascript" src="ejemplos/a_rojo.js"></script>
   
+</div>
+
+<div class='step' data-x='8000' data-z='-1000'>
+  <h2>Las llamadas a selectores devuelven el mismo conjunto jQuery</h2>
+
+    <div id='a_rojo_2' class='ejemplos'>
+      <form>
+	<input type="submit" value="Venga"/>
+      </form>
+      <p>Unas palabrejas cualesquiera</p>
+    </div>
+    <pre class='js'>$("#a_rojo_2 form").submit(function(){
+    $("#a_rojo_2")
+	.css("color", "red" )
+	.css("background-color", "blue" );
+    return false;
+}); </pre>
+    <script type="text/javascript" src="ejemplos/a_rojo_2.js"></script>
+</div>
+
+<div class='step' data-x='7000' data-z='-1000'>
+  <h2>Aunque en este caso se puede pasar JSON</h2>
+
+     <div id='a_rojo_3' class='ejemplos'>
+      <form>
+	<input type="submit" value="Venga"/>
+      </form>
+      <p>Otras palabrejas cualesquiera</p>
+    </div>
+    <pre class='js'>$("#a_rojo_3 form").submit(function(){
+    $("#a_rojo_3").css( { color: "brown",
+			  backgroundColor: "yellow" } );
+    return false;
+});</pre>
+    <script type="text/javascript" src="ejemplos/a_rojo_3.js"></script>
+</div>
+
+<div class='step' data-x='6000' data-z='-1000'>
+  <h2>Un CSS un poco especial: notación JS</h2>
+
+  <ul><li>Se usa <code>backgroundColor</code> en vez de <code>background-color</code>.</li>
+    <li>Claves sin comillas, valores con comillas.</li>
+    <li>jQuery admite CSS 1 a 3</li>
+  </ul>
+</div>
+
+<div class='step' data-x='5000' data-z='-1000' >
+  <h2>Ejercita lo aprendido (Bloque 2)</h2>
+
+  <div class='ejercicios'><p>Añadir negritas a todos los elementos en cursiva que estén dentro de un párrafo (<em>no</em> de un elemento <code>h1</code>, por ejemplo) </p></div>
+
 </div>
 
 <div class="hint">
