@@ -35,7 +35,10 @@
   <li>Librería de JavaScript</li>
   <li>Simplifica la creación de programas e interfaces ricos de usuario.</li>
   <li>Creado en el año 2006.</li>
-  <li>Usado en <a href='http://royal.pingdom.com/2012/06/20/jquery-numbers/'>la mitad de los sitios más populares</a>.</li>
+  <li>Usado
+  en <a href='http://royal.pingdom.com/2012/06/20/jquery-numbers/'>la
+  mitad de los sitios más populares</a> (más que Flash).</li>
+  <li>La mejor librería para manipulación del DOM, Ajax y efectos visuales.</li>
 </ul>
 
 	</div>
@@ -52,6 +55,7 @@
 
   <li>O, por supuesto, desde tu propia copia en tu propio sitio web (porque es libre).</li>
 
+  <li><a href='http://andreehansson.se/the-basics-of-jquery/'>Abstrae las diferentes implementaciones</a> de los navegadores.</li>
 </ul>
 
 	</div>
@@ -93,13 +97,46 @@ $(document).ready(function() {
 <div class='step' data-x='5000'>
   <h2>Claves del programa anterior</h2>
   <ul><li>Inclusión del jQuery <em>alojado</em> por Google.</li>
-    <li><a href='http://stackoverflow.com/questions/1150381/what-is-the-meaning-of-sign-in-javascript'><code>$</code> es un identificador válido de JavaScript</a>.
-      <ul><li>Y una abreviatura de <code>jQuery</code></li></ul></li>
+    <li><a href='http://stackoverflow.com/questions/1150381/what-is-the-meaning-of-sign-in-javascript'><code>$</code> es un identificador válido de JavaScript</a>      y una abreviatura de <code>jQuery</code></li>
     <li><code>$(document) == jquery(document)</code> <a href='http://stackoverflow.com/questions/1122690/jquery-and-questions/1122740#1122740'>llama a una función</a> sobre el objeto <code>document</code>.</li>
-    <li>... que devuelve otro objeto sobre el que creamos un evento cuando el documento está <code>ready</code></li>
-
+    <li>... que devuelve otro objeto sobre el que creamos un evento cuando el documento está <code>ready</code>.</li>
   </ul>
 </div>
+
+<div class='step' data-x='6000'>
+  <h2>Creando una agenda</h2>
+
+  <h3>jQuery crea <em>eventos</em>: cuando suceda esto
+    (<code>ready</code>), haz esto otro (<code>alert</code>):
+    estilo <em>asíncrono</em></h3>
+</div>
+
+<div class='step' data-x='7000'>
+  <h2>Simplificando aún más</h2>
+  <p><a href='ejemplos/ready-simple.html'><file>ready-simple.html</file></a></p>
+<code class='ejemplo'><span class="hl kwa">&lt;!DOCTYPE</span> HTML PUBLIC <span class="hl str">&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</span> <span class="hl str">&quot;http://www.w3.org/TR/html4/loose.dtd&quot;</span><span class="hl kwa">&gt;</span>
+<span class="hl kwa">&lt;html&gt;</span>
+<span class="hl kwa">&lt;head&gt;</span>
+<span class="hl kwa">&lt;meta</span> <span class="hl kwb">http-equiv</span>=<span class="hl str">&quot;Content-Type&quot;</span> <span class="hl kwb">content</span>=<span class="hl str">&quot;text/html; charset=iso-8859-15&quot;</span><span class="hl kwa">&gt;</span>
+<span class="hl kwa">&lt;script</span> <span class="hl kwb">src</span>=<span class="hl str">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js&quot;</span><span class="hl kwa">&gt;&lt;/script&gt;</span>
+<span class="hl kwa">&lt;title&gt;</span>Probando ready de jQuery<span class="hl kwa">&lt;/title&gt;</span>
+<span class="hl kwa">&lt;/head&gt;</span>
+
+<span class="hl kwa">&lt;body&gt;</span>
+<span class="hl kwa">&lt;h1&gt;</span>Esta es una página que no tiene gran cosa<span class="hl kwa">&lt;/h1&gt;</span>
+
+<span class="hl kwa">&lt;p&gt;</span>Pero podría tenerla.<span class="hl kwa">&lt;/p&gt;</span>
+<span class="hl kwa">&lt;script</span> type='text/javascript'<span class="hl kwa">&gt;</span>
+$(function() {
+    alert('Ahora estamos listos');
+});
+<span class="hl kwa">&lt;/script&gt;</span>
+<span class="hl kwa">&lt;address&gt;&lt;/address&gt;</span>
+<span class="hl com">&lt;!-- hhmts start --&gt;</span>Last modified: Sun Apr  <span class="hl num">7 19</span>:<span class="hl num">49</span>:<span class="hl num">52</span> CEST <span class="hl num">2013</span> <span class="hl com">&lt;!-- hhmts end --&gt;</span>
+<span class="hl kwa">&lt;/body&gt;</span> 
+<span class="hl kwa">&lt;/html&gt;</span></code>
+</div>
+
 
 <div class="hint">
     <p>Usa las flechas para navegar</p>
