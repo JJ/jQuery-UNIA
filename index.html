@@ -276,8 +276,37 @@ $(function() {
 
 </div>
 
-<div class='step' data-x='5000' data-z='-2000' >
-  <h2>Ejercita lo aprendido (Bloque 2)</h2>
+<div class='step' data-x='4000' data-z='-2000' >
+  <h2>Metiendo y sacando cosas</h2>
+
+  <h3>Aparte de <code>html</code>, que mete código a cascoporro,
+  tenemos</h3>
+
+  <ul><li><code>after</code>: añade código <em>después</em> del
+      elemento (siguiente en el DOM) y <code>append</code> después
+      del <em>contenido</em> del elemento.</li>
+    <li><code>prepend</code> lo añade <em>antes</em> del contenido del
+    elemento.</li>
+    <li><code>remove</code> elimina un elemento, mientras
+      que <code>clone</code> lo copia.</li>
+  </ul>
+</div>
+
+<div class='step' data-x='5000' data-z='-2000'>
+  <h2>Más texto por todos lados</h2>
+
+     <div id='texto' class='ejemplos'>
+      <form>
+	<input type="submit" value="Venga"/>
+      </form>
+      <p> (^_^) </p>
+    </div>
+    <pre class='js'>$("#texto form").submit(function(){
+    $("#texto p").prepend( "Mira: ").append(" - ¡Qué feliz!").after('<p>Este no: |-)</p>');
+    return false;
+});</pre>
+    <script type="text/javascript" src="ejemplos/texto.js"></script>
+</div>
 
 <div class="hint">
     <p>Usa las flechas para navegar</p>
