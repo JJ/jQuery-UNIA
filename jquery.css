@@ -181,3 +181,17 @@ code.ejemplo {
   margin-right: 5%;
   margin-left: 5%;
 }
+
+div.ejercicios {
+  font-size:2em;
+  padding: 10pt;
+  font-family:  Telex, Times, serif, Times New Roman;
+  background-color: seashell;
+  color: black;
+  border-style: solid;
+  border-color: darkblue;
+  border-width: 1pt;
+  text-indent: 0%;
+  margin-right: 20%;
+  margin-left: 8%;
+}

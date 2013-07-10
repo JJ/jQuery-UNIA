@@ -14,7 +14,7 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jmpress.js"></script>
 
-<link href='http://fonts.googleapis.com/css?family=Montserrat|Lato' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Montserrat|Lato|Telex' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
@@ -137,7 +137,7 @@ $(function() {
 <span class="hl kwa">&lt;/html&gt;</span></code>
 </div>
 
-<div class='step'  data-x='8000'>
+<div class='step' data-x='8000'>
   <h2>Tan simple, tan simple...</h2>
 
   <ul><li>jQuery usa extensivamente las <em>funciones anónimas</em>
@@ -150,6 +150,26 @@ $(function() {
   <h3>Recuerda, jQuery es siempre asíncrono</h3>
 
 </div>
+
+<div class='step' data-x='9000'>
+  <h2>Ejercita lo aprendido (Bloque 1)</h2>
+
+<div class='ejercicios'><p>Crear una página que al cargarse realice
+    alguna acción, como por ejemplo extraer usando JS todos los
+    títulos H2 de secciones o la primera palabra de cada
+    párrafo. Alternativamente, imprimir el número de elementos de un
+    tipo dado (<code>H2</code>), por ejemplo. </p></div>
+
+</div>
+
+<div class='step' data-x='9000' data-z='1000'>
+  <h2>Seleccionando partes del documento</h2>
+
+  <ul><li>Se usan selectores CSS3 entre
+      comillas: <code>$("h2")</code>, por ejemplo. </li>
+    <li>Un selector devuelve un <em>set jQuery</em>. un objeto sobre
+      el cual se puede aplicar otra función: <code>$("h2").each( function()
+      { alert(this.text);}
 
 <div class="hint">
     <p>Usa las flechas para navegar</p>
