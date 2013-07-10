@@ -302,10 +302,112 @@ $(function() {
       <p> (^_^) </p>
     </div>
     <pre class='js'>$("#texto form").submit(function(){
-    $("#texto p").prepend( "Mira: ").append(" - ¡Qué feliz!").after('<p>Este no: |-)</p>');
+    $("#texto p").prepend( "Mira: ")
+      .append(" - ¡Qué feliz!")
+      .after('&lt;p>Este no: |-)&lt;/p>');
     return false;
 });</pre>
     <script type="text/javascript" src="ejemplos/texto.js"></script>
+</div>
+
+<div class='step' data-x='6000' data-z='-2000'>
+  <h2>También nos lo podemos cargar</h2>
+
+     <div id='texto_2' class='ejemplos'>
+      <form id='clona'>
+	<input type="submit" value="Clona"/>
+      </form>
+      <form id='borra'>
+	<input type="submit" value="Borra"/>
+      </form>
+      <p> (^_^) </p>
+    </div>
+    <pre class='js'>$("#clona").submit(function(){
+    $("#texto_2 p").after( $("#texto_2 p").clone());
+    return false;
+});
+$("#borra").submit(function(){
+    $("#texto_2 p").remove(); return false;
+});
+</pre>
+    <script type="text/javascript" src="ejemplos/texto_2.js"></script>
+</div>
+
+<div class='step' data-x='7000' data-z='-2000'>
+  <h2>¿Cómo funciona clone?</h2>
+
+  <ul><li>Crea un nuevo elemento, <em>pero desligado del resto del
+  DOM</em>.</li>
+    <li>Por eso tenemos que usar <code>after</code> para indicarle
+      dónde colocarlo.</li>
+  </ul>
+</div>
+
+<div class='step' data-x='8000' data-z='-2000'>
+  <h2>Podemos ser más selectivos</h2>
+
+     <div id='texto_3' class='ejemplos'>
+      <form id='clona_2'>
+	<input type="submit" value="Clona"/>
+      </form>
+      <form id='borra_2'>
+	<input type="submit" value="Borra"/>
+      </form>
+      <p> (^_^) </p>
+    </div>
+    <pre class='js'>$("#clona_2").submit(function(){
+$("#texto_3 p").after( $("#texto_2 p").clone()
+  .addClass("nuevo").css("color","green")); return false;
+  });
+$("#borra_2").submit(function(){
+  $("#texto_3 p.nuevo").remove(); return false;
+});
+</pre>
+    <script type="text/javascript" src="ejemplos/texto_3.js"></script>
+</div>
+
+<div class='step' data-x='9000' data-z='-2000'>
+  <h2>Clonando con clase</h2>
+
+  <ul><li><code>addClass</code> añade un atributo de clase al elemento
+      que se crea</li>
+    <li>Ese atributo de clase se usa para seleccionar el elemento (o
+      elementos) que queremos borrar.</li>
+
+    <li class='pregunta'>¿Qué pasaría si se pulsa varias veces el
+      botón <em>Clona</em>? ¿Por qué?</li>
+  </ul>
+</div>
+
+<div class='step' data-x='10000' data-z='-2000'>
+  <h2>Siempre hay más de una forma de hacerlo</h2>
+
+     <div id='texto_4' class='ejemplos'>
+      <form id='clona_3'>
+	<input type="submit" value="Clona"/>
+      </form>
+      <form id='borra_3'>
+	<input type="submit" value="Borra"/>
+      </form>
+      <p> (^_^) </p>
+    </div>
+    <pre class='js'>$("#clona_3").submit(function(){
+      $("#texto_4 p")
+        .after( $("#texto_4 p").clone()
+        .attr("class","nuevo").css( { "color" : "DarkBlue",
+                                      "font-weight": "Bold" }));
+      return false;
+}); // Resto igual</pre>
+    <script type="text/javascript" src="ejemplos/texto_4.js"></script>
+</div>
+
+<div class='step' data-x='11000' data-z='-2000' >
+  <h2>Ejercita lo aprendido (Bloque 3)</h2>
+
+  <div class='ejercicios'><p>Añadir a cada elemento <code>h2</code>
+      de un texto un atributo de clase y la palabra "Tema". <em>Para
+      nota</em>. Poner el número del tema. </p></div>
+
 </div>
 
 <div class="hint">

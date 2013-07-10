@@ -162,9 +162,20 @@ ul {
 li { 
      font-size: 2em;
      font-family: "Lato", sans-serif;
-     color:#1F1209;
+     color: #1F1209;
      padding: 10px;
 }
+
+li.pregunta { 
+     font-size: 2.5em;
+     font-family: "Lato", sans-serif;
+     color: DarkRed;
+     padding: 10px;
+     margin: 10px;
+     border: solid;
+     border-color: #201310;
+}
+
 
 code.ejemplo {
   font-size:medium;
