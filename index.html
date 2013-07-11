@@ -723,12 +723,37 @@ $("#borra_2").submit(function(){
 <div class='step' data-x='8000' data-z='-7000' >
   <h2>Autocompletando</h2>
 
- <div id='ui' class='ejemplos'>
+ <div id='ui' class='ejemplos' style='font-size:2em'>
     <label for="refranes">Refranes: </label>
     <input id="refranes" />
  </div>
-  <pre class='js'></pre>
+  <pre class='js'>var refranes = ["No por mucho madrugar...",...
+		"Cree el ladrón ..."];
+
+$( "#refranes" ).autocomplete({
+    source: refranes
+});
+</pre>
   <script type="text/javascript" src="ejemplos/ui.js"></script>
+</div>
+
+<div class='step' data-x='7000' data-z='-7000' >
+  <h2>Aplicando los widgets</h2>
+
+  <ul><li>Cada uno tiene sus opciones</li>
+    <li>UI añade también efectos: <a href='http://jqueryui.com/addClass/'>cambiar clases</a> sobre la marcha, efectos de color... </li>
+    <li>También añade <em>interacciones</em>: <em>widgets</em> que pueden cambiar de tamaño, por ejemplo, o que se pueden poner por orden (<em>sortable</em>)</li>
+  </ul>
+</div>
+
+<div class='step' data-x='6000' data-z='-6000' >
+  <h2>Ejercita lo aprendido (Bloque 8)</h2>
+
+  <div class='ejercicios'><p>Usar
+  el <a href='http://jqueryui.com/accordion/'>efecto acordeón</a>
+  sobre un grupo de <code>divs</code>.  </p> 
+  </div>
+
 </div>
 
 <div class="hint">
