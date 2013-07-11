@@ -623,7 +623,7 @@ $("#borra_2").submit(function(){
 
 </div>
 
-<div class='step' data-x='5000' data-z='-6000' >
+<div class='step' data-x='14000' data-z='-6000' >
   <h2>Navegando por un mar de objetos</h2>
 
   <ul>
@@ -632,12 +632,81 @@ $("#borra_2").submit(function(){
     <li><code>parent()</code> accede al nodo
       padre, <code>next()</code> y <code>prev()</code> al siguiente y
       anterior, <code>children()</code> a todos los hijos
-      y <code>.siblings()</code> a los hermanos .
-    
+      y <code>.siblings()</code> a los hermanos.</li>
+    <ul>
+</div>
 
-<ul>
+<div class='step' data-x='13000' data-z='-6000' >
+  <h2>Pero poca cosa se puede hacer sólo en el cliente</h2>
+
+  <ul><li>La mayoría de las aplicaciones trabajan con un servidor, aunque sea solamente para comprobar actualizaciones o servir publicidad.</li>
+    <li>JS es hoy en día el único lenguaje que permite escribir
+      aplicaciones cliente-servidor sin cambiar de lenguaje</li>
+    <li>El servidor puede
+    usar <a href='http://couchdb.apache.org/‎'>CouchDB</a> (una base de
+      datos NoSQL) o <a href='http://nodejs.org'>node.js</a>, un
+      intérprete similar en concepto a JQuery</li>
+  </ul>
+</div>
+
+<div class='step' data-x='12000' data-z='-6000' >
+  <h2><a href='servidor/refranes.js'>Sirviendo</a> el refranero</h2>
+
+  <ul><li>Creamos una aplicación en node.js
+      <a  href='http://expressjs.com/'>usando <code>express</code></a>,
+      la librería para APIs tipo REST.</li>
+    <li>La aplicación sirve las páginas estáticas</li>
+    <li>Cuando se hace una petición <code>GET</code>
+      a <code>/refranes</code> envía código JSON con un refrán
+      aleatorio.</li>
+    <li>Podemos <a href='http://localhost:8080'>probarla</a> (si
+    la tenemos instalada, claro)</li> </ul>
+  </ul>
 
 </div>
+
+<div class='step' data-x='11000' data-z='-6000' >
+  <h2>Un buen servidor necesita un buen amo</h2>
+
+<pre class='js'>$(function() {
+    $("#refranero form").submit( function () {
+	$.ajax({ 
+	    url: "/refran", 
+	    success: function( data ) { 
+		console.log(data);
+		$("#refran").text(data.refran); }
+        }); 
+	return false;  });  })</pre>
+</div>
+
+<div class='step' data-x='10000' data-z='-6000' >
+  <h2>Explicando héroes mitológicos: Ajax</h2>
+
+  <ul><li><code>.ajax()</code> es la función genérica de JQuery para
+      llamar al servidor.</li>
+    <li>Primera precaución: solo se puede llamar al servidor del que
+      haya <em>salido</em> la página. Por eso el servidor JS envía
+      también la página HTML.</li>
+    <li>Los dos parámetros imprescindibles son <code>url</code>, la
+      dirección a la que se va a acceder y <code>success</code>, la
+      función <em>callback</em> a la que se llama cuando la respuesta
+      tiene éxito.</li>
+  </ul>
+</div> 
+
+<div class='step' data-x='9000' data-z='-6000' >
+  <h2>Ejercita lo aprendido (Bloque 6)</h2>
+
+  <div class='ejercicios'><p>Buscar un alojamiento que admita de forma
+      gratuita aplicaciones con Ajax, sea en node.js o en otro
+      lenguaje como PHP. <strong>Para nota:</strong> Tratar de crear una aplicación Ajax que
+  incremente un contador (y muestre el resultado) cada vez que pulsa
+      un botón. Se puede alojar en el propio ordenador (usando XAMPP)
+  o en algún lugar de alojamiento gratuito (de los anteriores).</p> 
+
+
+</div>
+
 
 <div class="hint">
     <p>Usa las flechas para navegar</p>
