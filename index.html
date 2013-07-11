@@ -410,6 +410,65 @@ $("#borra_2").submit(function(){
 
 </div>
 
+<div class='step' data-x='11000' data-z='-4000' >
+  <h2>Creando un calendario de eventos</h2>
+
+  <ul>
+    <li>Ya hemos visto uno de los eventos: <code>ready</code></li>
+    <li><a href='http://api.jquery.com/on/'><code>on</code> es la función</a> más general para asignación de
+      eventos. </li>
+    <li>La función <em>callback</em> recibe un objeto con el evento;
+      la variable <code>this</code> contiene el elemento sobre el que
+      ha sucedido el evento.</li>
+</div>
+
+<div class='step' data-x='10000' data-z='-4000'>
+  <h2>Haciendo que pasen cosas</h2>
+
+     <div id='evento' class='ejemplos'>
+      <p> (^_^) </p>
+    </div>
+    <pre class='js'>$("#evento").on("click", function(){
+		    $("#evento p").text("😇")
+      .css({ "background-color": "lightblue", 
+      color: "yellow",
+      fontSize: "3em" } );
+});</pre>
+    <script type="text/javascript" src="ejemplos/evento.js"></script>
+</div>
+
+<div class='step' data-x='90000' data-z='-4000'>
+  <h2>Delegado en funciones</h2>
+
+     <div id='evento_2' class='ejemplos'>
+       <p> (^_^) <span>Eres un ángel</span> </p>
+    </div>
+    <pre class='js'>$("#evento_2").on("mouseover", "span", function( event ){
+		      $("#evento_2 p").text("😇")
+			  .css({ "background-color": "yellow", 
+				 color: "lightblue",
+				 fontSize: "3em" } );
+});</pre>
+    <script type="text/javascript" src="ejemplos/evento_2.js"></script>
+</div>
+
+
+<div class='step' data-x='9000' data-z='-5000' >
+  <h2>Navegando por un mar de objetos</h2>
+
+  <ul>
+    <li>Partiendo de los selectores anteriores, <a href='http://api.jquery.com/category/traversing/tree-traversal/'>jQuery permite
+	trabajar con los nodos del DOM adyacentes</a>.</li>
+    <li><code>parent()</code> accede al nodo
+      padre, <code>next()</code> y <code>prev()</code> al siguiente y
+      anterior, <code>children()</code> a todos los hijos
+      y <code>.siblings()</code> a los hermanos .
+    
+
+<ul>
+
+</div>
+
 <div class="hint">
     <p>Usa las flechas para navegar</p>
 </div>
