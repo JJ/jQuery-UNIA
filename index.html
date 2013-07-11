@@ -12,11 +12,12 @@
 	<link href="css/jquery.css" rel="stylesheet" type="text/css" />
 	<link rel ='stylesheet' type = "text/css" href = "css/highlight.css" title='normal'>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!--script type="text/javascript" src="js/jquery.min.js"></script-->
 	<script type="text/javascript" src="js/jmpress.js"></script>
 	<script type="text/javascript"
 	src="js/jquery.snippet.js"></script> <!-- highlight environment -->
 
-	<link href='http://fonts.googleapis.com/css?family=Montserrat|Lato|Telex' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Montserrat|Lato|Telex|Lekton' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" type="text/css" href="css/jquery.snippet.css" />
 	
@@ -502,7 +503,127 @@ $("#borra_2").submit(function(){
     <li>Cada animación tiene sus propias opciones.</li>
 </div>
 
-<div class='step' data-x='9000' data-z='-6000' >
+<div class='step' data-x='7000' data-z='-5000'>
+  <h2>Mostrando lo oculto</h2>
+
+     <div id='animate' class='ejemplos' style='font-size:2em'>
+       <p><span id='hembra'>♀</span> <span id='macho' style='display:none'>♂</span></p>
+    </div>
+    <pre class='js'>$("#hembra").mouseover( function( event ){
+			    $("#macho").toggle();
+      });</pre>
+    <script type="text/javascript" src="ejemplos/animate.js"></script>
+</div>
+
+<div class='step' data-x='8000' data-z='-5000'>
+  <h2>Explicando lo sucedido</h2>
+
+<img src='http://farm1.staticflickr.com/157/344489013_6d048a4963_z.jpg'
+    alt='Se haga la luz' style='float:left'>
+
+  <h3><code>toggle</code> cambia el atributo <code>display</code>
+    pasando de oculto a visible y viceversa.</h3>
+
+<p class='image'><a href='http://www.flickr.com/photos/trois-tetes/344489013/'>Imagen
+    de Trois Têtes (TT)</a></p>
+</div>
+
+<div class='step' data-x='9000' data-z='-5000'>
+  <h2>Tampoco hay que marginar: <a href='ejemplos/animate_2.js'><code>animate</code></a></h2>
+
+     <div id='animate_2' class='ejemplos' style='font-size:2em'>
+       <p><span id='hembra_2'>♀</span> <span id='macho_2'>♂</span></p>
+    </div>
+    <pre class='js'>$("#hembra_2").hover( function( event ){
+			    $("#macho_2")
+      .animate( {marginBottom: 10, marginLeft: 10});
+},function(event) {
+    $("#macho_2")
+      .animate( {marginBottom: 0, marginLeft: 0}); 
+});</pre>
+    <script type="text/javascript" src="ejemplos/animate_2.js"></script>
+</div>
+
+
+<div class='step' data-x='10000' data-z='-5000'>
+  <h2>Explicando lo animado</h2>
+
+  <ul>
+    <li>
+      <code>hover</code> es equivalente a <code>onMouseIn</code>
+      y <code>onMouseOut</code>, por lo que usa
+      dos <em>callbacks</em>.</li>
+    <li><code>animate</code> recibe como parámetro usa las propiedades
+      CSS que se van a cambiar.</li>
+</div>
+
+<div class='step' data-x='11000' data-z='-5000'>
+  <h2>Deslizándose despacito</h2>
+
+     <div id='animate_3' class='ejemplos' style='font-size:1em'>
+       <ul><li id='papa'>♂
+	   <ul style='display:none'>
+	     <li class='hijo'>♂</li>
+	     <li class='hijo'>♂</li>
+	 </ul>
+	 </li>
+	 <li id='otropapa'>♂</li>
+       </ul>
+    </div>
+    <pre class='js'>$("#papa").hover( function( event ){
+		      $("#papa ul").slideDown();
+		  }, function( event ){
+		      $("#papa ul").fadeOut();
+		  });</pre>
+    <script type="text/javascript" src="ejemplos/animate_3.js"></script>
+</div>
+
+<div class='step' data-x='12000' data-z='-5000'>
+  <h2>Las claves de la animación</h2>
+
+  <ul>
+    <li>
+      <code>slideDown</code> y <code>slideUp</code> deslizan en sendas
+      direcciones lo que estaba previamente oculto.</li>
+    <li><code>fadeIn</code> y <code>fadeOut</code> van cambiando la
+    transparencia con cierta cadencia hasta aparecer o
+    desaparecer..</li>
+    <li>Útil, sobre todo, para crear menús animados</li>
+  </ul>
+</div>
+
+<div class='step' data-x='13000' data-z='-5000'>
+  <h2>Todo de una vez</h2>
+
+     <div id='animate_4' class='ejemplos' style='font-size:1em'>
+       <ul><li id='papito'>♂
+	   <ul style='display:none'>
+	     <li class='hijo'>♂</li>
+	     <li class='hijo'>♂</li>
+	 </ul>
+	 </li>
+	 <li id='otropapa'>♂</li>
+       </ul>
+    </div>
+    <pre class='js'>$("#papito").hover( function( event ){
+		      $("#papito ul").slideToggle();
+		  });</pre>
+    <script type="text/javascript" src="ejemplos/animate_4.js"></script>
+</div>
+
+<div class='step' data-x='14000' data-z='-5000' >
+  <h2>Ejercita lo aprendido (Bloque 5)</h2>
+
+  <div class='ejercicios'><p>Crear un <em>tooltip</em> que, al lado
+  de cada una de las opciones del menú, presente lo que hace dicha
+  opción. </p>
+
+    <p><strong>Para nota</strong>:  Crear un botón que
+    permita <em>encender</em> o apagar dicho tooltip. </div>
+
+</div>
+
+<div class='step' data-x='5000' data-z='-6000' >
   <h2>Navegando por un mar de objetos</h2>
 
   <ul>
