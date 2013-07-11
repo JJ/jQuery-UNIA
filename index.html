@@ -9,18 +9,17 @@
 	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<link href="css/jquery.css" rel="stylesheet" type="text/css" />
-	<link rel ='stylesheet' type = "text/css" href = "css/highlight.css" title='normal'>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<!--script type="text/javascript" src="js/jquery.min.js"></script-->
 	<script type="text/javascript" src="js/jmpress.js"></script>
-	<script type="text/javascript"
-	src="js/jquery.snippet.js"></script> <!-- highlight environment -->
+	<script type="text/javascript" src="js/jquery.snippet.js"></script> <!-- highlight environment -->
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>	<!-- Jquery UI-->
 
+	<link href="css/jquery.css" rel="stylesheet" type="text/css" />
+	<link rel='stylesheet' type ="text/css" href = "css/highlight.css" title='normal'>
 	<link href='http://fonts.googleapis.com/css?family=Montserrat|Lato|Telex|Lekton' rel='stylesheet' type='text/css'>
-
 	<link rel="stylesheet" type="text/css" href="css/jquery.snippet.css" />
-	
+
 </head>
 <body>
 
@@ -703,10 +702,34 @@ $("#borra_2").submit(function(){
   incremente un contador (y muestre el resultado) cada vez que pulsa
       un botón. Se puede alojar en el propio ordenador (usando XAMPP)
   o en algún lugar de alojamiento gratuito (de los anteriores).</p> 
-
+  </div>
 
 </div>
 
+<div class='step' data-x='9000' data-z='-7000' >
+  <h2>Enriqueciendo el interfaz del usuario</h2>
+
+  <ul><li><a href='http://jqueryui.com'>JQuery UI</a> es un módulo que
+      añade diferentes funcionalidades y <em>temas</em> a jQuery.</li>
+    <li><a href='http://jqueryui.com/demos/'>La sección de demos del
+	sitio web</a> incluye muestras de todo lo que puede
+      hacer: <em>acordeones</em>, autocompletar, <em>drag & drop</em>
+      y muchas otras cosas.</li>
+    <li>Se puede usar directamente desde el
+    CDN: <code style='font-size:0.75em'>http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css</code></li>
+  </ul>
+</div>
+
+<div class='step' data-x='8000' data-z='-7000' >
+  <h2>Autocompletando</h2>
+
+ <div id='ui' class='ejemplos'>
+    <label for="refranes">Refranes: </label>
+    <input id="refranes" />
+ </div>
+  <pre class='js'></pre>
+  <script type="text/javascript" src="ejemplos/ui.js"></script>
+</div>
 
 <div class="hint">
     <p>Usa las flechas para navegar</p>
