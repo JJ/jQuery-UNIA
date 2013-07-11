@@ -5,5 +5,5 @@ var refranes = ["No por mucho madrugar amanece más temprano",
 		"Cree el ladrón que todos son de su condición"];
 
 $( "#refranes" ).autocomplete({
-    source: refranes;
+    source: refranes
 });
