@@ -437,7 +437,7 @@ $("#borra_2").submit(function(){
     <script type="text/javascript" src="ejemplos/evento.js"></script>
 </div>
 
-<div class='step' data-x='90000' data-z='-4000'>
+<div class='step' data-x='9000' data-z='-4000'>
   <h2>Delegado en funciones</h2>
 
      <div id='evento_2' class='ejemplos'>
@@ -452,6 +452,44 @@ $("#borra_2").submit(function(){
     <script type="text/javascript" src="ejemplos/evento_2.js"></script>
 </div>
 
+<div class='step' data-x='8000' data-z='-4000'>
+  <h2>Casi todos los eventos tienen equivalente en jQuery</h2>
+
+     <div id='evento_3' class='ejemplos'>
+       <p> (^_^) </p>
+    </div>
+    <pre class='js'>$("#evento_3").dblclick( function( event ){
+		    $("#evento_3 p").text("😈")
+				 .css({ "background-color": "darkgray", 
+					color: "red",
+					fontSize: "3em" } );
+      });</pre>
+    <script type="text/javascript" src="ejemplos/evento_3.js"></script>
+</div>
+
+<div class='step' data-x='7000' data-z='-4000'>
+  <h2>Eventos a distancia</h2>
+
+     <div id='evento_4' class='ejemplos'>
+       <p><span id='angel'>😇</span> <span id='demonio'>😈</span></p>
+    </div>
+    <pre class='js'>$("#angel").click( function( event ){
+		       $("#demonio").click();
+      });</pre>
+    <script type="text/javascript" src="ejemplos/evento_4.js"></script>
+</div>
+
+<div class='step' data-x='6000' data-z='-4000' >
+  <h2>Ejercita lo aprendido (Bloque 4)</h2>
+
+  <div class='ejercicios'><p>Añadir a cada elemento <code>h2</code>
+      con un <em>ancla</em> (<code>a name</code>)
+      un evento que al pasar el ratón sobre ellos 
+      muestre un enlace a la misma a la izquierda del texto. </p>
+
+    <p><strong>Para nota</strong>: Crear las anclas automáticamente.</p></div>
+
+</div>
 
 <div class='step' data-x='9000' data-z='-5000' >
   <h2>Navegando por un mar de objetos</h2>
