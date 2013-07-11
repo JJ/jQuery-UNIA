@@ -213,3 +213,23 @@ div.ejemplos {
     border-width: 2pt;
     border-style: dashed;
 }
+
+p.image { 
+          position: absolute;
+          bottom:  0;
+          left: 0;
+          font-size: 1em;
+          background-color:rgba(230,240,250,0.5);
+ }
+
+code { 
+       font-family: Lekton, Courier, Courier New, monospace;
+       font-size: 1.1em;
+       background-color: black;
+       color: green;
+       font-weight:bold;
+       margin: 2px;
+       padding: 2px;
+       -moz-border-radius: 10px;
+       border-radius: 10px;
+}
