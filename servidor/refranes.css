@@ -1,0 +1,21 @@
+body {
+	font-family: Verdana, sans-serif;
+	min-height: 740px;
+	background-color: #ddd;
+	-webkit-font-smoothing: antialiased;
+}
+
+div#refranero {
+    margin:10px;
+    padding:10px;
+    background-color:linen;
+    margin-radius:15px;
+}
+
+div#refran {
+    margin: 10px;
+    padding: 10px;
+    border-width: 2pt;
+    border-style: dashed;
+    margin-radius: 15px;
+}
