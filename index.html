@@ -410,6 +410,114 @@ $("#borra_2").submit(function(){
 
 </div>
 
+<div class='step' data-x='11000' data-z='-4000' >
+  <h2>Creando un calendario de eventos</h2>
+
+  <ul>
+    <li>Ya hemos visto uno de los eventos: <code>ready</code></li>
+    <li><a href='http://api.jquery.com/on/'><code>on</code> es la función</a> más general para asignación de
+      eventos. </li>
+    <li>La función <em>callback</em> recibe un objeto con el evento;
+      la variable <code>this</code> contiene el elemento sobre el que
+      ha sucedido el evento.</li>
+</div>
+
+<div class='step' data-x='10000' data-z='-4000'>
+  <h2>Haciendo que pasen cosas</h2>
+
+     <div id='evento' class='ejemplos'>
+      <p> (^_^) </p>
+    </div>
+    <pre class='js'>$("#evento").on("click", function(){
+		    $("#evento p").text("😇")
+      .css({ "background-color": "lightblue", 
+      color: "yellow",
+      fontSize: "3em" } );
+});</pre>
+    <script type="text/javascript" src="ejemplos/evento.js"></script>
+</div>
+
+<div class='step' data-x='9000' data-z='-4000'>
+  <h2>Delegado en funciones</h2>
+
+     <div id='evento_2' class='ejemplos'>
+       <p> (^_^) <span>Eres un ángel</span> </p>
+    </div>
+    <pre class='js'>$("#evento_2").on("mouseover", "span", function( event ){
+		      $("#evento_2 p").text("😇")
+			  .css({ "background-color": "yellow", 
+				 color: "lightblue",
+				 fontSize: "3em" } );
+});</pre>
+    <script type="text/javascript" src="ejemplos/evento_2.js"></script>
+</div>
+
+<div class='step' data-x='8000' data-z='-4000'>
+  <h2>Casi todos los eventos tienen equivalente en jQuery</h2>
+
+     <div id='evento_3' class='ejemplos'>
+       <p> (^_^) </p>
+    </div>
+    <pre class='js'>$("#evento_3").dblclick( function( event ){
+		    $("#evento_3 p").text("😈")
+				 .css({ "background-color": "darkgray", 
+					color: "red",
+					fontSize: "3em" } );
+      });</pre>
+    <script type="text/javascript" src="ejemplos/evento_3.js"></script>
+</div>
+
+<div class='step' data-x='7000' data-z='-4000'>
+  <h2>Eventos a distancia</h2>
+
+     <div id='evento_4' class='ejemplos'>
+       <p><span id='angel'>😇</span> <span id='demonio'>😈</span></p>
+    </div>
+    <pre class='js'>$("#angel").click( function( event ){
+		       $("#demonio").click();
+      });</pre>
+    <script type="text/javascript" src="ejemplos/evento_4.js"></script>
+</div>
+
+<div class='step' data-x='6000' data-z='-4000' >
+  <h2>Ejercita lo aprendido (Bloque 4)</h2>
+
+  <div class='ejercicios'><p>Añadir a cada elemento <code>h2</code>
+      con un <em>ancla</em> (<code>a name</code>)
+      un evento que al pasar el ratón sobre ellos 
+      muestre un enlace a la misma a la izquierda del texto. </p>
+
+    <p><strong>Para nota</strong>: Crear las anclas automáticamente.</p></div>
+
+</div>
+
+<div class='step' data-x='600' data-z='-5000' >
+  <h2>Animando el cotarro</h2>
+
+  <ul>
+    <li>Igual que JavaScript en su tiempo se usó principalmente para
+    animaciones en el cliente, JQuery también tiene una <a href='http://api.jquery.com/category/effects/'>gran cantidad
+	de transiciones y animaciones</a> .</li>
+    <li>Usa las transiciones de CSS3 si puede ser.  </li>
+    <li>Cada animación tiene sus propias opciones.</li>
+</div>
+
+<div class='step' data-x='9000' data-z='-6000' >
+  <h2>Navegando por un mar de objetos</h2>
+
+  <ul>
+    <li>Partiendo de los selectores anteriores, <a href='http://api.jquery.com/category/traversing/tree-traversal/'>jQuery permite
+	trabajar con los nodos del DOM adyacentes</a>.</li>
+    <li><code>parent()</code> accede al nodo
+      padre, <code>next()</code> y <code>prev()</code> al siguiente y
+      anterior, <code>children()</code> a todos los hijos
+      y <code>.siblings()</code> a los hermanos .
+    
+
+<ul>
+
+</div>
+
 <div class="hint">
     <p>Usa las flechas para navegar</p>
 </div>
