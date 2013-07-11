@@ -29,6 +29,5 @@ app.get('/refran', function (req, res) {
     res.send( { 'refran':  refranes[Math.floor(Math.random()*refranes.length)] } );
 });
 
-
 app.listen(8080);
 console.log('Server running at http://127.0.0.1:8080/');
