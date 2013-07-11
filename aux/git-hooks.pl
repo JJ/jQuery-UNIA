@@ -5,8 +5,6 @@ use warnings;
 use v5.14;
 use Git::Hooks;
 
-EOT
-
 POST_COMMIT {
   my ($git) = @_;
   my $branch =  $git->command(qw/rev-parse --abbrev-ref HEAD/);
