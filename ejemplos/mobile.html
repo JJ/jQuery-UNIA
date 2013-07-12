@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Primera prueba jQuery Mobile</title> 	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+</head> 
+
+<body> 
+
+  <div data-role="page" id='p1'> 
+    <div data-role="header"><h1>Esta aplicación es fantabulosa</h1></div> 
+    <div data-role="content">
+      <p>Y hace un montón de cosas</p>
+      <p><a href="#p2" data-role="button" data-transition="fade">Pasa página</a></p>	
+    </div> 
+    <div data-role="footer"><h3>Pero puedes pasar a la página siguiente</h3></div> 
+  </div> 
+
+  <div data-role="page" id='p2'> 
+    <div data-role="header"><h1>Y aquí empezamos a hacerlo todo</h1></div> 
+    <div data-role="content"><p>En realidad no hacemos mucho</p>
+      <p><a href="#p1" data-role="button" data-transition="turn">Pasa página</a></p> 
+    </div> 
+    <div data-role="footer"><h3>Aquí nos quedamos</h3></div> 
+  </div> 
+
+</body>
+</html>
