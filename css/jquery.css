@@ -44,7 +44,7 @@ body {
 
 /* fade out inactive slides */
 .step:not(.active) {
-	opacity: 0.3;
+	opacity: 1;
 }
 
 /* hint on the first slide */
