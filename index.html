@@ -732,8 +732,7 @@ $("#borra_2").submit(function(){
 
 $( "#refranes" ).autocomplete({
     source: refranes
-});
-</pre>
+});</pre>
   <script type="text/javascript" src="ejemplos/ui.js"></script>
 </div>
 
@@ -746,7 +745,7 @@ $( "#refranes" ).autocomplete({
   </ul>
 </div>
 
-<div class='step' data-x='6000' data-z='-6000' >
+<div class='step' data-x='6000' data-z='-7000' >
   <h2>Ejercita lo aprendido (Bloque 8)</h2>
 
   <div class='ejercicios'><p>Usar
@@ -754,6 +753,85 @@ $( "#refranes" ).autocomplete({
   sobre un grupo de <code>divs</code>.  </p> 
   </div>
 
+</div>
+
+<div class='step' data-x='6000' data-z='-8000' >
+  <h2>Trabajando en móviles con jQuery Mobile</h2>
+
+  <ul>
+    <li><a href='http://jquerymobile.com/'>jQuery mobile</a> usa
+    atributos de HTML5 para contruir interfaces táctiles sobre jQuery
+      y jQuery UI.</li>
+    <li>Multiplataforma y basado en <em>markup</em> más que en órdenes
+      (como aprender de nuevo HTML).</li>
+    <li>Accesibilidad integrada.</li>
+    <li>Funciona con jQuery <em>hasta 1.8.3</em></li>
+  </ul>
+</div>
+
+<div class='step' data-x='5000' data-z='-8000' >
+  <h2>Estructurando la <a href='ejemplos/mobile.html'>aplicación en
+  páginas</a></h2>
+
+<code class='ejemplo'> <span class="hl kwa">&lt;div</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;page&quot;</span> id='p1'<span class="hl kwa">&gt;</span> 
+    <span class="hl kwa">&lt;div</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;header&quot;</span><span class="hl kwa">&gt;&lt;h1&gt;</span>Esta aplicación es fantabulosa<span class="hl kwa">&lt;/h1&gt;&lt;/div&gt;</span> 
+    <span class="hl kwa">&lt;div</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;content&quot;</span><span class="hl kwa">&gt;</span>
+      <span class="hl kwa">&lt;p&gt;</span>Y hace un montón de cosas<span class="hl kwa">&lt;/p&gt;</span>
+      <span class="hl kwa">&lt;p&gt;
+	&lt;a</span> <span class="hl kwb">href</span>=<span class="hl str">&quot;#p2&quot;</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;button&quot;</span> <span class="hl kwb">data-transition</span>=<span class="hl str">&quot;fade&quot;</span><span class="hl kwa">&gt;</span>Pasa página<span class="hl kwa">&lt;/a&gt;
+      &lt;/p&gt;</span>	
+    <span class="hl kwa">&lt;/div&gt;</span> 
+    <span class="hl kwa">&lt;div</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;footer&quot;</span><span class="hl kwa">&gt;
+      &lt;h3&gt;</span>Pero puedes pasar a la página siguiente<span class="hl kwa">&lt;/h3&gt;
+    &lt;/div&gt;</span> 
+  <span class="hl kwa">&lt;/div&gt;</span></code>
+</div>
+
+<div class='step' data-x='4000' data-z='-8000' >
+  <h2>La segunda página</h2>
+
+  <code class='ejemplo'> <span class="hl kwa">&lt;div</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;page&quot;</span> id='p2'<span class="hl kwa">&gt;</span> 
+    <span class="hl kwa">&lt;div</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;header&quot;</span><span class="hl kwa">&gt;&lt;h1&gt;</span>Y aquí empezamos a hacerlo todo<span class="hl kwa">&lt;/h1&gt;&lt;/div&gt;</span> 
+    <span class="hl kwa">&lt;div</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;content&quot;</span><span class="hl kwa">&gt;&lt;p&gt;</span>En realidad no hacemos mucho<span class="hl kwa">&lt;/p&gt;</span>
+      <span class="hl kwa">&lt;p&gt;
+	&lt;a</span> <span class="hl kwb">href</span>=<span class="hl str">&quot;#p1&quot;</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;button&quot;</span> 
+                      <span class="hl kwb">data-transition</span>=<span class="hl str">&quot;turn&quot;</span><span class="hl kwa">&gt;</span>Pasa página<span class="hl kwa">&lt;/a&gt;
+       &lt;/p&gt;</span> 
+    <span class="hl kwa">&lt;/div&gt;</span> 
+    <span class="hl kwa">&lt;div</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;footer&quot;</span><span class="hl kwa">&gt;&lt;h3&gt;</span>Aquí nos quedamos<span class="hl kwa">&lt;/h3&gt;&lt;/div&gt;</span> 
+  <span class="hl kwa">&lt;/div&gt;</span>  </code>
+
+</div>
+
+<div class='step' data-x='3000' data-z='-8000' >
+  <h2>Datos por encima de nuestras posibilidades</h2>
+
+  <ul><li>jQuery-Mobile usa <code>data-</code> (de HTML5) para
+  estructurar la aplicación; también accesibles por API.</li>
+    <li>Cada <code>div</code> con el <code>data-role=page</code> actúa como una página</li>
+    <li><code>data-role</code> indica el significado del elemento y ayuda a su presentación.</li>
+    <li><a href='http://jquerymobile.com/demos/1.2.1/docs/pages/page-transitions.html'><code>data-transition</code> codifica las transiciones de página</a>.</li>
+  </ul>
+</div>
+
+
+<div class='step' data-x='2000' data-z='-8000' >
+  <h2>Ejercita lo aprendido (Bloque 9)</h2>
+
+  <div class='ejercicios'><p>Crear una app básica usando jQuery
+  mobile con una página índice y varias páginas de contenido. </p> 
+  </div>
+
+</div>
+
+<div class='step' data-x='1000' data-z='-8000' >
+  <h2>Eso es todo</h2>
+
+  <h2>¿Alguna pregunta?</h2>
+
+  <h3>Sígueme en <a href='http://twitter.com/jjmerelo'>@jjmerelo</a> o
+    compra mis novelas
+    en <a href='http://www.amazon.es/s/?_encoding=UTF8&camp=3626&creative=24822&field-author=Juan%20Juli%C3%A1n%20Merelo%20Guerv%C3%B3s&linkCode=ur2&search-alias=digital-text&tag=atalaya-21'>Amazon</a></h3>
 </div>
 
 <div class="hint">
@@ -764,6 +842,9 @@ $( "#refranes" ).autocomplete({
 $(function() {
 	$('#simple').jmpress();
         $("pre.js").snippet("javascript",{style:"peachpuff",
+                                          transparent:false,
+                                          showNum:true});
+        $("#html1").snippet("html",{style:"navy",
                                           transparent:false,
                                           showNum:true});
 });
