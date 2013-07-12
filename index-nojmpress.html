@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>jQuery y jQuery Mobile - Tutorial</title>
+
+	<meta name="description" content="jmpress.js is a jQuery plugin to build a website on the infinite canvas">
+	<meta name="author" content="Kyle Robinson Young @shama & Tobias Koppers @sokra Modified by @jjmerelo JJ Merelo" />
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<!--script type="text/javascript" src="js/jquery.min.js"></script-->
+	<!--script type="text/javascript" src="js/jmpress.js"></script-->
+	<script type="text/javascript" src="js/jquery.snippet.js"></script> <!-- highlight environment -->
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>	<!-- Jquery UI-->
+
+	<link href="css/jquery.css" rel="stylesheet" type="text/css" />
+	<link rel='stylesheet' type ="text/css" href = "css/highlight.css" title='normal'>
+	<link href='http://fonts.googleapis.com/css?family=Montserrat|Lato|Telex|Lekton' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/jquery.snippet.css" />
+
+</head>
+<body>
+
+<div id="simple">
+	<div id="home" class="step">
+	  <h1>Tutorial de jQuery y jQuery Mobile</h1>
+	  <h2>Por <a href='http://twitter.com/jjmerelo'>JJ Merelo</a></h2>
+	  <h3>Curso <strong>Desarrollo de aplicaciones multiplataforma para dispositivos móviles</strong>, UNIA, La Rábida, Huelva, julio 2013</h3>
+
+	  <h3>Este tutorial tiene licencia <a href='http://creativecommons.org/licenses/by-sa/2.0/es/'><code>cc-by-sa</code></a> y
+	    lo puedes leer en <a href='http://jj.github.io/jQuery-UNIA'>goo.gl/1xana</a></h3>
+	</div>
+
+
+	<div class="step" data-x="1000">
+	  <h2>Qué es jQuery</h2>
+
+<ul>
+  <li>Librería de JavaScript</li>
+  <li>Simplifica la creación de programas e interfaces ricos de usuario.</li>
+  <li>Creado en el año 2006.</li>
+  <li>Usado
+  en <a href='http://royal.pingdom.com/2012/06/20/jquery-numbers/'>la
+  mitad de los sitios más populares</a> (más que Flash).</li>
+  <li>La mejor librería para manipulación del DOM, Ajax y efectos visuales.</li>
+</ul>
+
+	</div>
+
+	<div class="step" data-x="2000">
+	  <h2>Software libre, por supuesto</h2>
+
+	  <ul><li>Usa una
+	      <a href='http://en.wikipedia.org/wiki/MIT_License'>licencia MIT</a></li>
+	    
+	    <li>La licencia MIT es <em>permisiva</em> y permite incluirlo dentro de software privativo</li>
+	    <li>Eso no significa que <em>debas</em> hacerlo.</li>
+	  </ul>
+	</div>
+
+<div class="step" data-x="3000">
+	  <h2>Donde conseguirlo</h2>
+
+  <li>Descargable desde <a href='http://jquery.org'>jQuery.org</a>.</li>
+
+  <li>Y usable desde ahí o desde <a href='https://developers.google.com/speed/libraries/devguide#jquery'><em>Google hosted libraries</em></a> o cualquier otra <a href='http://jquery.com/download/'><em>Content Delivery Network (CDN)</em></a>.</li>
+	  <li><a href='http://ejohn.org/apps/workshop/intro/#41'>Uso <em>minificado</em></a>: descarga rápida.</li>
+
+  <li>O, por supuesto, desde tu propia copia en tu propio sitio web (porque es libre).</li>
+
+  <li><a href='http://andreehansson.se/the-basics-of-jquery/'>Abstrae las diferentes implementaciones</a> de los navegadores.</li>
+</ul>
+
+	</div>
+
+
+	<div class="step" data-x="4000">
+	  <h2>Base de un ecosistema de módulos</h2>
+
+	  <ul>
+	    <li><a href='http://jqueryui.com/'>jQuery UI</a>, para creación de interfaces de usuario.</li>
+	    <li><a href='http://jquerymobile.com/'>jQuery mobile, para móviles y basada en HTML5</a></li>
+	    <li><a href='http://plugins.jquery.com/'>Y plugins para jQuery</a></li>
+	    <li>Aparte de <a href='https://github.com/shama/jmpress.js'>jmpress.js</a>, con el que estoy haciendo esta presentación.</li>
+	</div>
+
+	<div class="step" data-x="5000">
+	  <h2>El dólar se paró aquí</h2>
+
+	  <p><a href='ejemplos/ready.html'><code>ready.html</code></a></p>
+<code class='ejemplo'><span class="hl kwa">&lt;html&gt;</span>
+<span class="hl kwa">&lt;head&gt;</span>
+<span class="hl kwa">&lt;meta</span> <span class="hl kwb">http-equiv</span>=<span class="hl str">&quot;Content-Type&quot;</span> <span class="hl kwb">content</span>=<span class="hl str">&quot;text/html; charset=iso-8859-15&quot;</span><span class="hl kwa">&gt;</span>
+<span class="hl kwa">&lt;script</span> <span class="hl kwb">src</span>=<span class="hl str">&quot;http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js&quot;</span><span class="hl kwa">&gt;&lt;/script&gt;</span>
+<span class="hl kwa">&lt;title&gt;</span>Probando ready de jQuery<span class="hl kwa">&lt;/title&gt;</span>
+<span class="hl kwa">&lt;/head&gt;</span>
+
+<span class="hl kwa">&lt;body&gt;</span>
+<span class="hl kwa">&lt;h1&gt;</span>Esta es una página que no tiene gran cosa<span class="hl kwa">&lt;/h1&gt;</span>
+
+<span class="hl kwa">&lt;p&gt;</span>Pero podría tenerla.<span class="hl kwa">&lt;/p&gt;</span>
+<span class="hl kwa">&lt;script</span> type='text/javascript'<span class="hl kwa">&gt;</span>
+$(document).ready(function() {
+    alert('Ahora estamos listos');
+});
+<span class="hl kwa">&lt;/script&gt;</span></code>
+
+</div>
+
+<div class='step' data-x='6000'>
+  <h2>Claves del programa anterior</h2>
+  <ul><li>Inclusión del jQuery <em>alojado</em> por Google.</li>
+    <li><a href='http://stackoverflow.com/questions/1150381/what-is-the-meaning-of-sign-in-javascript'><code>$</code> es un identificador válido de JavaScript</a>      y una abreviatura de <code>jQuery</code></li>
+    <li><code>$(document) == jquery(document)</code> <a href='http://stackoverflow.com/questions/1122690/jquery-and-questions/1122740#1122740'>llama a una función</a> sobre el objeto <code>document</code>.</li>
+    <li>... que devuelve otro objeto sobre el que creamos un evento cuando el documento está <code>ready</code>.</li>
+  </ul>
+</div>
+
+<div class='step' data-x='7000'>
+  <h2>Creando una agenda</h2>
+
+  <h3>jQuery crea <em>eventos</em>: cuando suceda esto
+    (<code>ready</code>), haz esto otro (<code>alert</code>):
+    estilo <em>asíncrono</em> y <em>funcional</em>.</h3>
+
+<img src='http://farm8.staticflickr.com/7258/7490824390_94d5d22cd6_z.jpg' alt='Cronos'>
+  <p class='image'><a href='http://www.flickr.com/photos/rodianstrangestain/7490824390/'>Imagen de Mr. Strangestain</a></p>
+</div>
+
+<div class='step' data-x='8000'>
+  <h2>Simplificando aún más</h2>
+  <p><a href='ejemplos/ready-simple.html'><file>ready-simple.html</file></a></p>
+<code class='ejemplo'><span class="hl kwa">&lt;!DOCTYPE</span> HTML PUBLIC <span class="hl str">&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</span> <span class="hl str">&quot;http://www.w3.org/TR/html4/loose.dtd&quot;</span><span class="hl kwa">&gt;</span>
+<span class="hl kwa">&lt;html&gt;</span>
+<span class="hl kwa">&lt;head&gt;</span>
+<span class="hl kwa">&lt;meta</span> <span class="hl kwb">http-equiv</span>=<span class="hl str">&quot;Content-Type&quot;</span> <span class="hl kwb">content</span>=<span class="hl str">&quot;text/html; charset=iso-8859-15&quot;</span><span class="hl kwa">&gt;</span>
+<span class="hl kwa">&lt;script</span> <span class="hl kwb">src</span>=<span class="hl str">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js&quot;</span><span class="hl kwa">&gt;&lt;/script&gt;</span>
+<span class="hl kwa">&lt;title&gt;</span>Probando ready de jQuery<span class="hl kwa">&lt;/title&gt;</span>
+<span class="hl kwa">&lt;/head&gt;</span>
+
+<span class="hl kwa">&lt;body&gt;</span>
+<span class="hl kwa">&lt;h1&gt;</span>Esta es una página que no tiene gran cosa<span class="hl kwa">&lt;/h1&gt;</span>
+
+<span class="hl kwa">&lt;p&gt;</span>Pero podría tenerla.<span class="hl kwa">&lt;/p&gt;</span>
+<span class="hl kwa">&lt;script</span> type='text/javascript'<span class="hl kwa">&gt;</span>
+$(function() {
+    alert('Ahora estamos listos');
+});
+<span class="hl kwa">&lt;/script&gt;</span>
+<span class="hl kwa">&lt;address&gt;&lt;/address&gt;</span>
+<span class="hl com">&lt;!-- hhmts start --&gt;</span>Last modified: Sun Apr  <span class="hl num">7 19</span>:<span class="hl num">49</span>:<span class="hl num">52</span> CEST <span class="hl num">2013</span> <span class="hl com">&lt;!-- hhmts end --&gt;</span>
+<span class="hl kwa">&lt;/body&gt;</span> 
+<span class="hl kwa">&lt;/html&gt;</span></code>
+</div>
+
+<div class='step' data-x='9000'>
+  <h2>Tan simple, tan simple...</h2>
+
+  <ul><li>jQuery usa extensivamente las <em>funciones anónimas</em>
+  o <em>closures</em> de JavaScript</li>
+    <li>Hemos creado un evento que se lanza cuando el documento está
+    cargado</li>
+    <li>Se crea una función anónima a la que se llama
+    asíncronamente</li>
+  </ul>
+  <h3>Recuerda, jQuery es siempre asíncrono</h3>
+
+</div>
+
+<div class='step' data-x='10000'>
+  <h2>Ejercita lo aprendido (Bloque 1)</h2>
+
+<div class='ejercicios'><p>Crear una página que al cargarse realice
+    alguna acción, como por ejemplo extraer usando JS todos los
+    títulos H2 de secciones o la primera palabra de cada
+    párrafo. Alternativamente, imprimir el número de elementos de un
+    tipo dado (<code>H2</code>), por ejemplo. </p></div>
+
+</div>
+
+<div class='step' data-x='10000' data-z='-1000'>
+  <h2>Seleccionando partes del documento</h2>
+
+  <ul><li>Se usan selectores CSS3 entre
+      comillas: <code>$("h2")</code>, por ejemplo. </li>
+    <li>Un selector devuelve un <em>set jQuery</em>. un objeto sobre
+      el cual se puede aplicar otra función: </li>
+  </ul>
+  <pre class='js'>$("h2").each( function() { 
+    alert($(this).text());
+}</pre>
+
+
+</div>
+
+<div class='step' data-x='9000' data-z='-1000'>
+  <h2>Ejemplo: Cambiar color a rojo</h2>
+  
+  <div id='a_rojo' class='ejemplos'>
+    <form>
+      <input type="submit" value="Venga"/>
+    </form>
+    <p>Unas palabrejas cualesquiera</p>
+  </div>
+  <pre class='js'>$("#a_rojo form").submit(function(){
+    $("#a_rojo").css( "color", "red" );
+    return false;
+}); </pre>
+  <script type="text/javascript" src="ejemplos/a_rojo.js"></script>
+  
+</div>
+
+<div class='step' data-x='8000' data-z='-1000'>
+  <h2>Las llamadas a selectores devuelven el mismo conjunto jQuery</h2>
+
+    <div id='a_rojo_2' class='ejemplos'>
+      <form>
+	<input type="submit" value="Venga"/>
+      </form>
+      <p>Unas palabrejas cualesquiera</p>
+    </div>
+    <pre class='js'>$("#a_rojo_2 form").submit(function(){
+    $("#a_rojo_2")
+	.css("color", "red" )
+	.css("background-color", "blue" );
+    return false;
+}); </pre>
+    <script type="text/javascript" src="ejemplos/a_rojo_2.js"></script>
+</div>
+
+<div class='step' data-x='7000' data-z='-1000'>
+  <h2>Aunque en este caso se puede pasar JSON</h2>
+
+     <div id='a_rojo_3' class='ejemplos'>
+      <form>
+	<input type="submit" value="Venga"/>
+      </form>
+      <p>Otras palabrejas cualesquiera</p>
+    </div>
+    <pre class='js'>$("#a_rojo_3 form").submit(function(){
+    $("#a_rojo_3").css( { color: "brown",
+			  backgroundColor: "yellow" } );
+    return false;
+});</pre>
+    <script type="text/javascript" src="ejemplos/a_rojo_3.js"></script>
+</div>
+
+
+<div class='step' data-x='6000' data-z='-1000'>
+  <h2>Un CSS un poco especial: notación JS</h2>
+
+  <ul><li>Se usa <code>backgroundColor</code> en vez de <code>background-color</code>.</li>
+    <li>Claves sin comillas, valores con comillas.</li>
+    <li>jQuery admite CSS 1 a 3</li>
+  </ul>
+</div>
+
+<div class='step' data-x='5000' data-z='-1000'>
+  <h2>Podemos usar también notación CSS (entre comillas)</h2>
+
+     <div id='a_rojo_4' class='ejemplos'>
+      <form>
+	<input type="submit" value="Venga"/>
+      </form>
+      <p>Otras palabrejas cualesquiera</p>
+    </div>
+    <pre class='js'>$("#a_rojo_4 form").submit(function(){
+    $("#a_rojo_4").css( { "font-weight": "bold",
+			  "font-size" : "2em" } );
+    return false;
+});</pre>
+    <script type="text/javascript" src="ejemplos/a_rojo_4.js"></script>
+</div>
+
+<div class='step' data-x='4000' data-z='-1000' >
+  <h2>Ejercita lo aprendido (Bloque 2)</h2>
+
+  <div class='ejercicios'><p>Añadir negritas a todos los elementos en cursiva que estén dentro de un párrafo (<em>no</em> de un elemento <code>h1</code>, por ejemplo) </p></div>
+
+</div>
+
+<div class='step' data-x='4000' data-z='-2000' >
+  <h2>Metiendo y sacando cosas</h2>
+
+  <h3>Aparte de <code>html</code>, que mete código a cascoporro,
+  tenemos</h3>
+
+  <ul><li><code>after</code>: añade código <em>después</em> del
+      elemento (siguiente en el DOM) y <code>append</code> después
+      del <em>contenido</em> del elemento.</li>
+    <li><code>prepend</code> lo añade <em>antes</em> del contenido del
+    elemento.</li>
+    <li><code>remove</code> elimina un elemento, mientras
+      que <code>clone</code> lo copia.</li>
+  </ul>
+</div>
+
+<div class='step' data-x='5000' data-z='-2000'>
+  <h2>Más texto por todos lados</h2>
+
+     <div id='texto' class='ejemplos'>
+      <form>
+	<input type="submit" value="Venga"/>
+      </form>
+      <p> (^_^) </p>
+    </div>
+    <pre class='js'>$("#texto form").submit(function(){
+    $("#texto p").prepend( "Mira: ")
+      .append(" - ¡Qué feliz!")
+      .after('&lt;p>Este no: |-)&lt;/p>');
+    return false;
+});</pre>
+    <script type="text/javascript" src="ejemplos/texto.js"></script>
+</div>
+
+<div class='step' data-x='6000' data-z='-2000'>
+  <h2>También nos lo podemos cargar</h2>
+
+     <div id='texto_2' class='ejemplos'>
+      <form id='clona'>
+	<input type="submit" value="Clona"/>
+      </form>
+      <form id='borra'>
+	<input type="submit" value="Borra"/>
+      </form>
+      <p> (^_^) </p>
+    </div>
+    <pre class='js'>$("#clona").submit(function(){
+    $("#texto_2 p").after( $("#texto_2 p").clone());
+    return false;
+});
+$("#borra").submit(function(){
+    $("#texto_2 p").remove(); return false;
+});
+</pre>
+    <script type="text/javascript" src="ejemplos/texto_2.js"></script>
+</div>
+
+<div class='step' data-x='7000' data-z='-2000'>
+  <h2>¿Cómo funciona clone?</h2>
+
+  <ul><li>Crea un nuevo elemento, <em>pero desligado del resto del
+  DOM</em>.</li>
+    <li>Por eso tenemos que usar <code>after</code> para indicarle
+      dónde colocarlo.</li>
+  </ul>
+</div>
+
+<div class='step' data-x='8000' data-z='-2000'>
+  <h2>Podemos ser más selectivos</h2>
+
+     <div id='texto_3' class='ejemplos'>
+      <form id='clona_2'>
+	<input type="submit" value="Clona"/>
+      </form>
+      <form id='borra_2'>
+	<input type="submit" value="Borra"/>
+      </form>
+      <p> (^_^) </p>
+    </div>
+    <pre class='js'>$("#clona_2").submit(function(){
+$("#texto_3 p").after( $("#texto_2 p").clone()
+  .addClass("nuevo").css("color","green")); return false;
+  });
+$("#borra_2").submit(function(){
+  $("#texto_3 p.nuevo").remove(); return false;
+});
+</pre>
+    <script type="text/javascript" src="ejemplos/texto_3.js"></script>
+</div>
+
+<div class='step' data-x='9000' data-z='-2000'>
+  <h2>Clonando con clase</h2>
+
+  <ul><li><code>addClass</code> añade un atributo de clase al elemento
+      que se crea</li>
+    <li>Ese atributo de clase se usa para seleccionar el elemento (o
+      elementos) que queremos borrar.</li>
+
+    <li class='pregunta'>¿Qué pasaría si se pulsa varias veces el
+      botón <em>Clona</em>? ¿Por qué?</li>
+  </ul>
+</div>
+
+<div class='step' data-x='10000' data-z='-2000'>
+  <h2>Siempre hay más de una forma de hacerlo</h2>
+
+     <div id='texto_4' class='ejemplos'>
+      <form id='clona_3'>
+	<input type="submit" value="Clona"/>
+      </form>
+      <form id='borra_3'>
+	<input type="submit" value="Borra"/>
+      </form>
+      <p> (^_^) </p>
+    </div>
+    <pre class='js'>$("#clona_3").submit(function(){
+      $("#texto_4 p")
+        .after( $("#texto_4 p").clone()
+        .attr("class","nuevo").css( { "color" : "DarkBlue",
+                                      "font-weight": "Bold" }));
+      return false;
+}); // Resto igual</pre>
+    <script type="text/javascript" src="ejemplos/texto_4.js"></script>
+</div>
+
+<div class='step' data-x='11000' data-z='-2000' >
+  <h2>Ejercita lo aprendido (Bloque 3)</h2>
+
+  <div class='ejercicios'><p>Añadir a cada elemento <code>h2</code>
+      de un texto un atributo de clase y la palabra "Tema". <em>Para
+      nota</em>. Poner el número del tema. </p></div>
+
+</div>
+
+<div class='step' data-x='11000' data-z='-4000' >
+  <h2>Creando un calendario de eventos</h2>
+
+  <ul>
+    <li>Ya hemos visto uno de los eventos: <code>ready</code></li>
+    <li><a href='http://api.jquery.com/on/'><code>on</code> es la función</a> más general para asignación de
+      eventos. </li>
+    <li>La función <em>callback</em> recibe un objeto con el evento;
+      la variable <code>this</code> contiene el elemento sobre el que
+      ha sucedido el evento.</li>
+</div>
+
+<div class='step' data-x='10000' data-z='-4000'>
+  <h2>Haciendo que pasen cosas</h2>
+
+     <div id='evento' class='ejemplos'>
+      <p> (^_^) </p>
+    </div>
+    <pre class='js'>$("#evento").on("click", function(){
+		    $("#evento p").text("😇")
+      .css({ "background-color": "lightblue", 
+      color: "yellow",
+      fontSize: "3em" } );
+});</pre>
+    <script type="text/javascript" src="ejemplos/evento.js"></script>
+</div>
+
+<div class='step' data-x='9000' data-z='-4000'>
+  <h2>Delegado en funciones</h2>
+
+     <div id='evento_2' class='ejemplos'>
+       <p> (^_^) <span>Eres un ángel</span> </p>
+    </div>
+    <pre class='js'>$("#evento_2").on("mouseover", "span", function( event ){
+		      $("#evento_2 p").text("😇")
+			  .css({ "background-color": "yellow", 
+				 color: "lightblue",
+				 fontSize: "3em" } );
+});</pre>
+    <script type="text/javascript" src="ejemplos/evento_2.js"></script>
+</div>
+
+<div class='step' data-x='8000' data-z='-4000'>
+  <h2>Casi todos los eventos tienen equivalente en jQuery</h2>
+
+     <div id='evento_3' class='ejemplos'>
+       <p> (^_^) </p>
+    </div>
+    <pre class='js'>$("#evento_3").dblclick( function( event ){
+		    $("#evento_3 p").text("😈")
+				 .css({ "background-color": "darkgray", 
+					color: "red",
+					fontSize: "3em" } );
+      });</pre>
+    <script type="text/javascript" src="ejemplos/evento_3.js"></script>
+</div>
+
+<div class='step' data-x='7000' data-z='-4000'>
+  <h2>Eventos a distancia</h2>
+
+     <div id='evento_4' class='ejemplos'>
+       <p><span id='angel'>😇</span> <span id='demonio'>😈</span></p>
+    </div>
+    <pre class='js'>$("#angel").click( function( event ){
+		       $("#demonio").click();
+      });</pre>
+    <script type="text/javascript" src="ejemplos/evento_4.js"></script>
+</div>
+
+<div class='step' data-x='6000' data-z='-4000' >
+  <h2>Ejercita lo aprendido (Bloque 4)</h2>
+
+  <div class='ejercicios'><p>Añadir a cada elemento <code>h2</code>
+      con un <em>ancla</em> (<code>a name</code>)
+      un evento que al pasar el ratón sobre ellos 
+      muestre un enlace a la misma a la izquierda del texto. </p>
+
+    <p><strong>Para nota</strong>: Crear las anclas automáticamente.</p></div>
+
+</div>
+
+<div class='step' data-x='6000' data-z='-5000' >
+  <h2>Animando el cotarro</h2>
+
+  <ul>
+    <li>Igual que JavaScript en su tiempo se usó principalmente para
+    animaciones en el cliente, JQuery también tiene una <a href='http://api.jquery.com/category/effects/'>gran cantidad
+	de transiciones y animaciones</a> .</li>
+    <li>Usa las transiciones de CSS3 si puede ser.  </li>
+    <li>Cada animación tiene sus propias opciones.</li>
+</div>
+
+<div class='step' data-x='7000' data-z='-5000'>
+  <h2>Mostrando lo oculto</h2>
+
+     <div id='animate' class='ejemplos' style='font-size:2em'>
+       <p><span id='hembra'>♀</span> <span id='macho' style='display:none'>♂</span></p>
+    </div>
+    <pre class='js'>$("#hembra").mouseover( function( event ){
+			    $("#macho").toggle();
+      });</pre>
+    <script type="text/javascript" src="ejemplos/animate.js"></script>
+</div>
+
+<div class='step' data-x='8000' data-z='-5000'>
+  <h2>Explicando lo sucedido</h2>
+
+<img src='http://farm1.staticflickr.com/157/344489013_6d048a4963_z.jpg'
+    alt='Se haga la luz' style='float:left'>
+
+  <h3><code>toggle</code> cambia el atributo <code>display</code>
+    pasando de oculto a visible y viceversa.</h3>
+
+<p class='image'><a href='http://www.flickr.com/photos/trois-tetes/344489013/'>Imagen
+    de Trois Têtes (TT)</a></p>
+</div>
+
+<div class='step' data-x='9000' data-z='-5000'>
+  <h2>Tampoco hay que marginar: <a href='ejemplos/animate_2.js'><code>animate</code></a></h2>
+
+     <div id='animate_2' class='ejemplos' style='font-size:2em'>
+       <p><span id='hembra_2'>♀</span> <span id='macho_2'>♂</span></p>
+    </div>
+    <pre class='js'>$("#hembra_2").hover( function( event ){
+			    $("#macho_2")
+      .animate( {marginBottom: 10, marginLeft: 10});
+},function(event) {
+    $("#macho_2")
+      .animate( {marginBottom: 0, marginLeft: 0}); 
+});</pre>
+    <script type="text/javascript" src="ejemplos/animate_2.js"></script>
+</div>
+
+
+<div class='step' data-x='10000' data-z='-5000'>
+  <h2>Explicando lo animado</h2>
+
+  <ul>
+    <li>
+      <code>hover</code> es equivalente a <code>onMouseIn</code>
+      y <code>onMouseOut</code>, por lo que usa
+      dos <em>callbacks</em>.</li>
+    <li><code>animate</code> recibe como parámetro usa las propiedades
+      CSS que se van a cambiar.</li>
+</div>
+
+<div class='step' data-x='11000' data-z='-5000'>
+  <h2>Deslizándose despacito</h2>
+
+     <div id='animate_3' class='ejemplos' style='font-size:1em'>
+       <ul><li id='papa'>♂
+	   <ul style='display:none'>
+	     <li class='hijo'>♂</li>
+	     <li class='hijo'>♂</li>
+	 </ul>
+	 </li>
+	 <li id='otropapa'>♂</li>
+       </ul>
+    </div>
+    <pre class='js'>$("#papa").hover( function( event ){
+		      $("#papa ul").slideDown();
+		  }, function( event ){
+		      $("#papa ul").fadeOut();
+		  });</pre>
+    <script type="text/javascript" src="ejemplos/animate_3.js"></script>
+</div>
+
+<div class='step' data-x='12000' data-z='-5000'>
+  <h2>Las claves de la animación</h2>
+
+  <ul>
+    <li>
+      <code>slideDown</code> y <code>slideUp</code> deslizan en sendas
+      direcciones lo que estaba previamente oculto.</li>
+    <li><code>fadeIn</code> y <code>fadeOut</code> van cambiando la
+    transparencia con cierta cadencia hasta aparecer o
+    desaparecer..</li>
+    <li>Útil, sobre todo, para crear menús animados</li>
+  </ul>
+</div>
+
+<div class='step' data-x='13000' data-z='-5000'>
+  <h2>Todo de una vez</h2>
+
+     <div id='animate_4' class='ejemplos' style='font-size:1em'>
+       <ul><li id='papito'>♂
+	   <ul style='display:none'>
+	     <li class='hijo'>♂</li>
+	     <li class='hijo'>♂</li>
+	 </ul>
+	 </li>
+	 <li id='otropapa'>♂</li>
+       </ul>
+    </div>
+    <pre class='js'>$("#papito").hover( function( event ){
+		      $("#papito ul").slideToggle();
+		  });</pre>
+    <script type="text/javascript" src="ejemplos/animate_4.js"></script>
+</div>
+
+<div class='step' data-x='14000' data-z='-5000' >
+  <h2>Ejercita lo aprendido (Bloque 5)</h2>
+
+  <div class='ejercicios'><p>Crear un <em>tooltip</em> que, al lado
+  de cada una de las opciones del menú, presente lo que hace dicha
+  opción. </p>
+
+    <p><strong>Para nota</strong>:  Crear un botón que
+    permita <em>encender</em> o apagar dicho tooltip. </div>
+
+</div>
+
+<div class='step' data-x='14000' data-z='-6000' >
+  <h2>Navegando por un mar de objetos</h2>
+
+  <ul>
+    <li>Partiendo de los selectores anteriores, <a href='http://api.jquery.com/category/traversing/tree-traversal/'>jQuery permite
+	trabajar con los nodos del DOM adyacentes</a>.</li>
+    <li><code>parent()</code> accede al nodo
+      padre, <code>next()</code> y <code>prev()</code> al siguiente y
+      anterior, <code>children()</code> a todos los hijos
+      y <code>.siblings()</code> a los hermanos.</li>
+    <ul>
+</div>
+
+<div class='step' data-x='13000' data-z='-6000' >
+  <h2>Pero poca cosa se puede hacer sólo en el cliente</h2>
+
+  <ul><li>La mayoría de las aplicaciones trabajan con un servidor, aunque sea solamente para comprobar actualizaciones o servir publicidad.</li>
+    <li>JS es hoy en día el único lenguaje que permite escribir
+      aplicaciones cliente-servidor sin cambiar de lenguaje</li>
+    <li>El servidor puede
+    usar <a href='http://couchdb.apache.org/‎'>CouchDB</a> (una base de
+      datos NoSQL) o <a href='http://nodejs.org'>node.js</a>, un
+      intérprete similar en concepto a JQuery</li>
+  </ul>
+</div>
+
+<div class='step' data-x='12000' data-z='-6000' >
+  <h2><a href='servidor/refranes.js'>Sirviendo</a> el refranero</h2>
+
+  <ul><li>Creamos una aplicación en node.js
+      <a  href='http://expressjs.com/'>usando <code>express</code></a>,
+      la librería para APIs tipo REST.</li>
+    <li>La aplicación sirve las páginas estáticas</li>
+    <li>Cuando se hace una petición <code>GET</code>
+      a <code>/refranes</code> envía código JSON con un refrán
+      aleatorio.</li>
+    <li>Podemos <a href='http://localhost:8080'>probarla</a> (si
+    la tenemos instalada, claro)</li> </ul>
+  </ul>
+
+</div>
+
+<div class='step' data-x='11000' data-z='-6000' >
+  <h2>Un buen servidor necesita un buen amo</h2>
+
+<pre class='js'>$(function() {
+    $("#refranero form").submit( function () {
+	$.ajax({ 
+	    url: "/refran", 
+	    success: function( data ) { 
+		console.log(data);
+		$("#refran").text(data.refran); }
+        }); 
+	return false;  });  })</pre>
+</div>
+
+<div class='step' data-x='10000' data-z='-6000' >
+  <h2>Explicando héroes mitológicos: Ajax</h2>
+
+  <ul><li><code>.ajax()</code> es la función genérica de JQuery para
+      llamar al servidor.</li>
+    <li>Primera precaución: solo se puede llamar al servidor del que
+      haya <em>salido</em> la página. Por eso el servidor JS envía
+      también la página HTML.</li>
+    <li>Los dos parámetros imprescindibles son <code>url</code>, la
+      dirección a la que se va a acceder y <code>success</code>, la
+      función <em>callback</em> a la que se llama cuando la respuesta
+      tiene éxito.</li>
+  </ul>
+</div> 
+
+<div class='step' data-x='9000' data-z='-6000' >
+  <h2>Ejercita lo aprendido (Bloque 6)</h2>
+
+  <div class='ejercicios'><p>Buscar un alojamiento que admita de forma
+      gratuita aplicaciones con Ajax, sea en node.js o en otro
+      lenguaje como PHP. <strong>Para nota:</strong> Tratar de crear una aplicación Ajax que
+  incremente un contador (y muestre el resultado) cada vez que pulsa
+      un botón. Se puede alojar en el propio ordenador (usando XAMPP)
+  o en algún lugar de alojamiento gratuito (de los anteriores).</p> 
+  </div>
+
+</div>
+
+<div class='step' data-x='9000' data-z='-7000' >
+  <h2>Enriqueciendo el interfaz del usuario</h2>
+
+  <ul><li><a href='http://jqueryui.com'>JQuery UI</a> es un módulo que
+      añade diferentes funcionalidades y <em>temas</em> a jQuery.</li>
+    <li><a href='http://jqueryui.com/demos/'>La sección de demos del
+	sitio web</a> incluye muestras de todo lo que puede
+      hacer: <em>acordeones</em>, autocompletar, <em>drag & drop</em>
+      y muchas otras cosas.</li>
+    <li>Se puede usar directamente desde el
+    CDN: <code style='font-size:0.75em'>http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css</code></li>
+  </ul>
+</div>
+
+<div class='step' data-x='8000' data-z='-7000' >
+  <h2>Autocompletando</h2>
+
+ <div id='ui' class='ejemplos' style='font-size:2em'>
+    <label for="refranes">Refranes: </label>
+    <input id="refranes" />
+ </div>
+  <pre class='js'>var refranes = ["No por mucho madrugar...",...
+		"Cree el ladrón ..."];
+
+$( "#refranes" ).autocomplete({
+    source: refranes
+});</pre>
+  <script type="text/javascript" src="ejemplos/ui.js"></script>
+</div>
+
+<div class='step' data-x='7000' data-z='-7000' >
+  <h2>Aplicando los widgets</h2>
+
+  <ul><li>Cada uno tiene sus opciones</li>
+    <li>UI añade también efectos: <a href='http://jqueryui.com/addClass/'>cambiar clases</a> sobre la marcha, efectos de color... </li>
+    <li>También añade <em>interacciones</em>: <em>widgets</em> que pueden cambiar de tamaño, por ejemplo, o que se pueden poner por orden (<em>sortable</em>)</li>
+  </ul>
+</div>
+
+<div class='step' data-x='6000' data-z='-7000' >
+  <h2>Ejercita lo aprendido (Bloque 8)</h2>
+
+  <div class='ejercicios'><p>Usar
+  el <a href='http://jqueryui.com/accordion/'>efecto acordeón</a>
+  sobre un grupo de <code>divs</code>.  </p> 
+  </div>
+
+</div>
+
+<div class='step' data-x='6000' data-z='-8000' >
+  <h2>Trabajando en móviles con jQuery Mobile</h2>
+
+  <ul>
+    <li><a href='http://jquerymobile.com/'>jQuery mobile</a> usa
+    atributos de HTML5 para contruir interfaces táctiles sobre jQuery
+      y jQuery UI.</li>
+    <li>Multiplataforma y basado en <em>markup</em> más que en órdenes
+      (como aprender de nuevo HTML).</li>
+    <li>Accesibilidad integrada.</li>
+    <li>Funciona con jQuery <em>hasta 1.8.3</em></li>
+  </ul>
+</div>
+
+<div class='step' data-x='5000' data-z='-8000' >
+  <h2>Estructurando la <a href='ejemplos/mobile.html'>aplicación en
+  páginas</a></h2>
+
+<code class='ejemplo'> <span class="hl kwa">&lt;div</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;page&quot;</span> id='p1'<span class="hl kwa">&gt;</span> 
+    <span class="hl kwa">&lt;div</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;header&quot;</span><span class="hl kwa">&gt;&lt;h1&gt;</span>Esta aplicación es fantabulosa<span class="hl kwa">&lt;/h1&gt;&lt;/div&gt;</span> 
+    <span class="hl kwa">&lt;div</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;content&quot;</span><span class="hl kwa">&gt;</span>
+      <span class="hl kwa">&lt;p&gt;</span>Y hace un montón de cosas<span class="hl kwa">&lt;/p&gt;</span>
+      <span class="hl kwa">&lt;p&gt;
+	&lt;a</span> <span class="hl kwb">href</span>=<span class="hl str">&quot;#p2&quot;</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;button&quot;</span> <span class="hl kwb">data-transition</span>=<span class="hl str">&quot;fade&quot;</span><span class="hl kwa">&gt;</span>Pasa página<span class="hl kwa">&lt;/a&gt;
+      &lt;/p&gt;</span>	
+    <span class="hl kwa">&lt;/div&gt;</span> 
+    <span class="hl kwa">&lt;div</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;footer&quot;</span><span class="hl kwa">&gt;
+      &lt;h3&gt;</span>Pero puedes pasar a la página siguiente<span class="hl kwa">&lt;/h3&gt;
+    &lt;/div&gt;</span> 
+  <span class="hl kwa">&lt;/div&gt;</span></code>
+</div>
+
+<div class='step' data-x='4000' data-z='-8000' >
+  <h2>La segunda página</h2>
+
+  <code class='ejemplo'> <span class="hl kwa">&lt;div</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;page&quot;</span> id='p2'<span class="hl kwa">&gt;</span> 
+    <span class="hl kwa">&lt;div</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;header&quot;</span><span class="hl kwa">&gt;&lt;h1&gt;</span>Y aquí empezamos a hacerlo todo<span class="hl kwa">&lt;/h1&gt;&lt;/div&gt;</span> 
+    <span class="hl kwa">&lt;div</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;content&quot;</span><span class="hl kwa">&gt;&lt;p&gt;</span>En realidad no hacemos mucho<span class="hl kwa">&lt;/p&gt;</span>
+      <span class="hl kwa">&lt;p&gt;
+	&lt;a</span> <span class="hl kwb">href</span>=<span class="hl str">&quot;#p1&quot;</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;button&quot;</span> 
+                      <span class="hl kwb">data-transition</span>=<span class="hl str">&quot;turn&quot;</span><span class="hl kwa">&gt;</span>Pasa página<span class="hl kwa">&lt;/a&gt;
+       &lt;/p&gt;</span> 
+    <span class="hl kwa">&lt;/div&gt;</span> 
+    <span class="hl kwa">&lt;div</span> <span class="hl kwb">data-role</span>=<span class="hl str">&quot;footer&quot;</span><span class="hl kwa">&gt;&lt;h3&gt;</span>Aquí nos quedamos<span class="hl kwa">&lt;/h3&gt;&lt;/div&gt;</span> 
+  <span class="hl kwa">&lt;/div&gt;</span>  </code>
+
+</div>
+
+<div class='step' data-x='3000' data-z='-8000' >
+  <h2>Datos por encima de nuestras posibilidades</h2>
+
+  <ul><li>jQuery-Mobile usa <code>data-</code> (de HTML5) para
+  estructurar la aplicación; también accesibles por API.</li>
+    <li>Cada <code>div</code> con el <code>data-role=page</code> actúa como una página</li>
+    <li><code>data-role</code> indica el significado del elemento y ayuda a su presentación.</li>
+    <li><a href='http://jquerymobile.com/demos/1.2.1/docs/pages/page-transitions.html'><code>data-transition</code> codifica las transiciones de página</a>.</li>
+  </ul>
+</div>
+
+
+<div class='step' data-x='2000' data-z='-8000' >
+  <h2>Ejercita lo aprendido (Bloque 9)</h2>
+
+  <div class='ejercicios'><p>Crear una app básica usando jQuery
+  mobile con una página índice y varias páginas de contenido. </p> 
+  </div>
+
+</div>
+
+<div class='step' data-x='1000' data-z='-8000' >
+  <h2>Eso es todo</h2>
+
+  <h2>¿Alguna pregunta?</h2>
+
+  <h3>Sígueme en <a href='http://twitter.com/jjmerelo'>@jjmerelo</a> o
+    compra mis novelas
+    en <a href='http://www.amazon.es/s/?_encoding=UTF8&camp=3626&creative=24822&field-author=Juan%20Juli%C3%A1n%20Merelo%20Guerv%C3%B3s&linkCode=ur2&search-alias=digital-text&tag=atalaya-21'>Amazon</a></h3>
+
+  <h2>Descarga este tutorial de <a href='http://github.com/JJ/jQuery-UNIA'>git.io/uniajq</a></h2>
+</div>
+
+<div class="hint">
+    <p>Usa las flechas para navegar</p>
+</div>
+
+<script type="text/javascript">
+$(function() {
+	$('#simple').jmpress();
+        $("pre.js").snippet("javascript",{style:"peachpuff",
+                                          transparent:false,
+                                          showNum:true});
+        $("#html1").snippet("html",{style:"navy",
+                                          transparent:false,
+                                          showNum:true});
+});
+</script>
+
+</body>
+</html>
